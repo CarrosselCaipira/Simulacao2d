@@ -1,0 +1,22 @@
+# -*-python-*-
+import os
+Import('env')
+
+if env['HAVE_LIBZ']:
+	GZ_LIBS=['libz']
+else:
+	GZ_LIBS=[]
+
+
+rcssgz = env.SharedLibrary('rcssgz', 
+			   ['gzfstream.cpp', 
+			    'gzstream.cpp'],
+			   LIBS=GZ_LIBS )
+Default(rcssgz)
+
+install = Install( env[ 'libdir' ], rcssgz )
+Alias('install', install)
+
+install = Install( os.path.join( env[ 'pkgincludedir' ], 'gz' ),
+		   ['gzstream.hpp', 'gzfstream.hpp'])
+Alias('install', install)

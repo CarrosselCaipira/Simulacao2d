@@ -1,0 +1,64 @@
+# -*-python-*-
+import os
+Import('env prog_env')
+
+if env['PLATFORM'] == 'win32':
+	DL_LIBS=['rcsserror']
+else:
+	DL_LIBS=['ltdl', 'rcsserror', 'boost_filesystem']
+
+rcsslib_env = env.Copy()
+rcsslib_env['PDB'] = 'rcsslib.pdb'
+
+rcsslib = rcsslib_env.SharedLibrary( 'rcsslib',
+				     ['loader.cpp',
+				      'loaderimpl.cpp',
+				      'preloader.cpp',
+				      'preloadloader.cpp',
+				      'systemloader.cpp'],
+				     LIBS=DL_LIBS )
+Default(rcsslib)
+
+
+install = Install( env[ 'libdir' ], rcsslib )
+Alias('install', install)
+
+
+rcsslibimporter = env.Program('rcsslibimporter', ['libimporter.cpp'])
+Default(rcsslibimporter)
+
+
+install = Install( env[ 'bindir' ], rcsslibimporter )
+Alias('install', install)
+Export('rcsslibimporter')
+
+
+if env['PLATFORM'] == 'win32':
+	DL_LIBS=['rcsslib']
+else:
+	DL_LIBS=['rcsslib', 'boost_filesystem']
+
+prog_env.Append(LIBPATH = '.')
+prog_env['PDB'] = 'rcssmodtest.pdb'
+rcssmodtest = prog_env.Program('rcssmodtest',
+			       ['rcssmodtest.cpp'], 
+			       LIBS=DL_LIBS)
+Default(rcssmodtest)
+
+
+install = Install( env[ 'bindir' ], rcssmodtest )
+Alias('install', install)
+
+
+install = Install( os.path.join( env[ 'pkgincludedir' ], 'lib' ),
+		   ['factory.hpp',
+		    'loader.hpp',
+		    'shared_ptr.hpp',
+		    'weak_ptr.hpp',
+		    'loaderimpl.hpp',
+		    'preloader.hpp'])
+Alias('install', install)
+
+
+SConscript(['factorytest/SConscript',
+			'loadertest/SConscript'])

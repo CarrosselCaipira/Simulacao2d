@@ -1,0 +1,15 @@
+# -*-python-*-
+import os
+
+Import('env')
+
+rcsserror = env.SharedLibrary('rcsserror', ['error.cpp'])
+Default(rcsserror)
+
+install = env.Install( env[ 'libdir' ], rcsserror )
+Alias('install', install)
+
+
+install = Install( os.path.join( env[ 'pkgincludedir' ], 'error' ), 
+		   ['error.hpp'])
+Alias('install', install)

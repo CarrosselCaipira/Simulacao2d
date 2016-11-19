@@ -1,0 +1,516 @@
+[12.1.3]
+  * Fixed build problems with boost::system.
+
+[12.1.2]
+  * Fixed library dependencies. Thanks go to Hedayat Vatankhah for
+    providing the patch.
+
+[12.1.1]
+  * Fixed gcc 4.3 compilation problems. Thanks go to Hedayat Vatankhah
+    for providing the patch.
+
+  * Fixed a gcc 4.4 compilatin problem.
+
+[12.1.0]
+  * Fixed a dependency between gzstreambuf and gzstream.
+
+  * Fixed header file dependencies.
+
+  * Fixed a coding style.
+
+[12.0.0]
+  * Fixed build problems on some platforms.
+
+[12.0.0_pre-20080210]
+  * Cleaned up the code and the build procedure.
+
+  * Added an automatic version check framework in the conf parser.
+
+[11.1.0]
+  * Just updated a minor version number. Official relasese for the
+    RoboCup2007.
+
+[11.0.1]
+  * Fixed bugs in the gzstream reset operation..
+
+[11.0.0]
+  * Fixd build problems.
+
+  * The boost check macros are added from autoconf macro
+    archive: http://autoconf-archive.cryp.to/
+
+[10.1.0]
+  * The boost files have been removed from the distribution.
+    RCSSBase now requires boost to be installed, prior to installing
+    RCSSBase.  You can get boost from www.boost.org
+
+  * The rcssbase configuration parser library now uses the boost spirit
+    library instead of flex and bison.  This was done because of problems
+    with flex on windows.  At the same time the parser interface was
+    refactored, to simply it's use.
+
+  * The rcssbase configuration parser library and the plugin loading library
+    now use the boost::filesystem library for handling paths and filenames
+
+[10.0.11]
+  * Fixed hang on configure experienced on some platforms when trying to
+    expand rpm macros
+
+[10.0.10]
+  * Fixed crash in destruction of configuration builders
+
+  * The configuration parser now supports the '-' character in unquoted
+    strings, so long as it's not the first character
+
+  * Fixed gcc 3.4 compilation problems.  Thanks go to Alexander Ferrein for
+    providing a patch.
+
+[10.0.9]
+  * Added module loading support from within the configuration
+    parser, using the options "load=<libname>", "setpath=<path>" and
+    "addpath=<path>".  If a library wishes to register a
+    configuration builder, it should link to the rcssconfparser
+    library and register the builder with the factory returned
+    by GenericBuilder::factory(), using the name of the library.
+    When the library is loaded using the "load=<libname>" option the
+    GenericBuilder factory will be searched for a entry with the same
+    name as the library and if found, the libraries generic builder
+    will be automatically created and added as a child.
+    If the library could not be loaded, the error handler will be
+    provided with a list of available libraries that can be loaded
+    (along with the normal error information).
+
+  * Added help support for configuration parser. The option "help",
+    "<namespace>::help" or when a error occurs a flag will be set to
+    indicate that help infomation should be requested.  The parent
+    builder should call GenericBuilder::displayHelp() after parsing,
+    if GenericBuilder::genericHelpRequested() returns true.
+
+  * Added child builder support for the configuration parser.  To
+    create a builder, a program name or a parent builder must be
+    specified.
+
+  * RCSSLIB_INIT now additionally declares a RCSS_MODULE_NAME as a
+    const char* set to the module name specified.
+
+  * Added support for listing the available modules when using the
+    library loader via the Loader::listAvailableModules() static
+    function.  This feature is not currently available on WIN32
+    platforms.  This function can be slow if there are a lot of files
+    in the search path, so you should try to keep the search path and
+    the files within it to a minimum and only use this function when
+    needed.  For speed purposes, the function caches the result for
+    subsequent calls, but is smart enough to know when the list may
+    have changed, which will force it to recalculate the list on the
+    next call.  It cannot however detect filesystem changes.  Calling
+    listAvailableModules() with the force parameter set to
+    Loader::FORCE_RECALC will force the list to be recalculated.
+
+  * Added support for error messages when a library fails to load.
+    rcss::lib::Loader::errorMsg() will return the last error that
+    occured.
+
+  * Fixed more OS X build issues.
+
+[10.0.8]
+  * Fixed some build issues especially on OS X
+
+[10.0.6]
+  * Fixed bug in release procedure
+
+[10.0.5]
+  * Fixed more problems with the gz library.
+
+  * Fixed defect in library loader where an exception would be thrown if
+    Loader::getPath() was called before Loader::setPath().
+
+  * Added support for reporting the argument number when parsing command line
+    arguments fail.
+
+  * Fixed build problems on Mac OS X
+
+  * Removed test for static loading due to problems creating static modules.
+    preloading of dynamic modules is still tested.
+
+  * The configuration parser library no longer throws exceptions.  It instead
+    supports an error handler via callbacks.
+
+  * Fixed runtime issues on Solaris 9
+
+[10.0.4]
+  * Fixed bug in dependancy tracking in the library loading module, which
+  could result in infinite loops
+
+  * Fixed bug in converting lib::shared_ptr to bool.
+
+  * Fixed build problems with the gz library
+
+  * There is a problem with the rcssconf library and newer versions of flex.
+  As a temporary solution you can disable the building of rcssconf via the
+  --enable-build-conf option to configure
+
+  * RCSSBase now come with a batch file call win32build.bat for
+  building the msi file.  Just run it from it's directory and specify
+  the the devenv (without the exe) program you wish to use.  E.G.
+
+    E:\10.0\rcssbase>win32build "D:\VS.NET\Common7\IDE\devenv"
+
+[10.0.3]
+  * TCPSocket has been added to the rcssnet library.  It's a bit
+  sketchy at the moment in terms of the interfaces, but it works.
+
+  * For those how don't install into the default location, pointing to
+  rcsstest (to check if rcssbase works on your system), is now
+  easier. When you configure, just set environement variable RCSSTEST
+  to the location where it was installed.  E.G.
+
+   ./configure RCSSTEST=$HOME/robocup
+
+  * The methods in the rcsslib and rcssnet librarys have been changed
+  to prevent exceptions from being thrown.  This has been done because
+  libtool's support of libraries with exceptions is shakey.  To check
+  if a library was loaded, use the return value of Loader::open() or
+  use Loader::isOpen() methods.
+
+  * PLATFORMS has been added which describes the platforms rcssbase
+  has been tested on and any issues encountered. Please submit patches
+  if you solve any of the problems or have simply tested in on another
+  platform.
+
+  * Fixed some compilation problems on FreeBSD 4.9.  Currently
+  everything will work except vertest, which means rcss::base::version
+  might no be available.
+
+[10.0.2]
+  * In some of the changes made in 10.0.1, the boost headers were
+  mistakenly removed from the list of distributed and installed
+  files.  This has now been corrected.
+
+[10.0.1]
+  * rcsslibloader has been renamed rcsslib andhas been successfully
+  ported to Windows.  When used correctly the Windows and Linux
+  versions of the library are functionally identical, however there
+  are techniques that can be used on Linux that will not work on
+  Windows (such a putting the factory into the main executable and
+  exporting symbols from the executable, rather than a putting the
+  factory into shared library).  Simply put, if you use the factories
+  and shared libraries as outlined below, then the only platform
+  specific code you will need to have when using this library, is to
+  specify the paths for where to look when loading libraries.
+
+  During the porting, rcsslib was heavily restructured.  All the
+  headers are now in rcssbase/lib/ and the rcsslib classes are in the
+  rcss::lib namespace.
+
+  ObjFact has been renamed Factory and now supports overwriting of
+  creators.  Previously is a creator as registered with the same index
+  as another creator, the registration function would return false.
+  Now the new creator is placed at the top of the stack and
+  subsequently removed when it is deregisterd.  Creators should be
+  deregistered in the reverse order in which they where registered,
+  otherwise the behaviour is undefined.  When getting a creator, the
+  factory simply returns the creator at the top of the stack.
+
+  rcss::lib::Loader is now used for loading libraries, but simply
+  passing the library name during construction.  The loader will try
+  to load the library by either seeing if it has been preloaded or by
+  using dlopen (or equivalent).  If both of these fail a
+  rcss::lib::NotFound exception is thrown.  It is possible to
+  customise the behaviour of the loader by deriving a class from
+  rcss::lib::LoaderImpl and registering it with
+  rcss::lib::LoaderImpl::factory(). rcss::lib::Loader simply tries
+  each of the rcss::lib::LoaderImpl creators registered with it's
+  factory until one succeeds.
+
+  Within your libraries, you must provide intialisation and
+  finalisation functions, which register and deregister the class(es)
+  within the library with the appropriate factory.  This is done with
+  the RCSSLIB_INIT and RCSSLIB_FIN macros, which take the library name
+  (without the extension) as paramter and should be followed by a
+  function body.  e.g.
+
+    RCSSLIB_INIT( libfoobar )
+    {
+      // initialisation code. (register object creators)
+      // return true if successfull
+    }
+
+    RCSSLIB_FIN( libfoobar )
+    {
+      // finalisation code. (deregister object creators)
+      // no return
+    }
+
+  It most cases, you will return true from RCSSLIB_INIT, however in
+  some situations you might want to check if a creator for the index
+  you plan to use is in use and return false, thus preventing the
+  already registered creator from being overwritten.  In that case
+  rcss::lib::Loader's constructor will throw rcss::lib::InitError.
+
+  The factories must be placed within shared libraries.  While placing
+  them in the exectuable may work on some platforms, in most certainly
+  won't be portable.  The recommened strategy is that the Abstract
+  Base Class (ABS) should define a static function that returns a
+  reference to the Factory that is used by the ABS and this ABS is
+  compiled into a shared library.  Your libraries that have classes
+  the derive from the ABS will then need to be linked with the ABS
+  library and your main executable will also need to link with the ABS
+  library.  By creating you program this way, the libraries contining
+  the derived classes and the main executable have access to the
+  factory, without needing the main exectuable to export symbols to
+  a shared library, thus making is far more portable.
+
+  The creators you register with the factories should return a
+  rcss::lib::shared_ptr.  This will keep a reference count to the
+  object and make sure that the library it comes from stays open while
+  the object exists. You should use rcss::lib::Loader::loadFromCache()
+  to get a copy of the loader used for that library.  The shared_ptr
+  should also be used to specify a destroyer function within the
+  library that will delete the object appropriatly.  This is neccesary
+  because some platforms require that memory allocated within a
+  library be also destroyed within the library.
+
+  For an example, please see rcssbase/lib/loadertest/
+
+[10.0.0]
+  * rcss::net::Addr can now be constructed with a strings for the
+  service and protocol to specify the port number.  Have a look at
+  rcssbase/net/addrtest/addrtest.cpp for an example of how this can be
+  done.
+
+  * The net part of rcssbase has been ported to windows and compiles
+  under VC++7.  Hopefully the rest will be ported soon.
+
+  * A small library rcsserror has been added to provide a platform
+  independent way of retrieving error messages, based on a error
+  number.
+
+[9.4.5]
+  * Fixed compilation problem on Cygwin, where certain headers were
+  not available.
+
+[9.4.3]
+  * The configuration parser now supports strings in single quotes.
+  This should make parsing strings on command line easier, as single
+  quotes are not stripped.
+
+[9.4.2]
+  * Fixed a variety of build problems
+
+[9.4.1]
+  * Fixed bug in autoconf macro for librcssconfparser detection
+
+  * Fixed build problem with gcc2.95
+
+[9.4.0]
+  * Added a configuration parsing library in rcssbase/conf.
+  Parameters are read in the format
+
+  NAME_SPACE::PARAM = VALUE
+
+  Where NAME_SPACE is the the partitioning used for the options and
+  has the the format
+
+    [^:\"= \t\n]+(::[^:\"= \t\n]+)*
+
+  E.G.
+
+  server
+  server::foo
+  player::foo::bar
+
+  PARAM is the name of the parameter and VALUE is what you want to set
+  it to.
+
+  PARAM must be an integer, real, boolean, a string matching
+
+    [^:\"= \t\n]+
+
+  and not matching an integer, real or boolean or a quoted string
+  matching
+
+    \"(\\\")*|[^\"]*\"
+
+  E.G.
+
+  5            (integer or real)
+  -16          (integer or real)
+  22.57        (real)
+  -31.6E+10    (real)
+  on           (boolean)
+  false        (boolean)
+  0            (integer, real or boolean)
+  1            (integer, real or boolean)
+  string       (string)
+  "string"     (quoted string)
+
+  The parser treats the command line arguments and files the same,
+  which means one has to be careful with quotes on the command line.
+  The shell will normally strip the quotes away, so if you need to
+  quote a parameter, you will need to escape the quotation marks.
+  E.G.
+
+  server::text_log_dir = \"~/my logging dir\"
+
+  NOTE:  escaping is only required on the command line.  Doing in
+  configuration files will yield errors.
+
+  You can add extra configuration files by using the following option
+
+    include = FILENAME
+
+  in either the command line or one of the default configuration
+  files.
+
+  Most programs using the library will create a subclass of
+  rcss::conf::Builder, which will ignore parameters not in it's
+  namespace and report errors on parameters in it's namespace, which
+  it does not recognise, however configuration file editing programs
+  should subclass from rcss::conf::GenericBuilder, which can be used
+  to handle any parameter in any namespace.
+
+[9.3.8]
+  * Fixed build problems with gcc 2.96
+
+[9.3.7]
+  * Updated the boost libraries to version 1.30.
+
+  * Updated test for rcsstest library
+
+[9.3.6]
+  * Made the functions in SocketStreamBuf virtual to allow for
+    subclass
+
+  * LibLoader now throws if a an attempt is made to load a library
+  with an empty name.
+
+[9.3.5]
+  * Fixed bugs in errors reported from the sockets.
+
+  * Added a version reporting function, so programs tat use the
+    rcssbase libraries can check and display the version that is being
+    used.  The function rcss::base::version() returns a const char*
+    containing the version of the library (e.g. "9.3.5").  Clients
+    must link to the rcssbase library to use this function.
+
+[9.3.4]
+  * Fixed gcc3 compilation problem in one of the tests.
+
+  * Added values for broadcast and any in Addr
+
+  * Added function to enable/disable broadcasting in Socket
+
+  * Added broadcast udp test.
+
+[9.3.3]
+  * Added unit tests for the rcssnet library.  The test code only
+  compiled if the rcsstest library is installed and available.  The
+  tests can be run by running 'make check'.  Please note:  The unit
+  tests are available under GPL, rather than LGPL.
+
+  * rcss::net::Socket::getDest has been deprecated.  Use getPeer
+  instead, which calls getpeername.  This throws a GetNameErr if
+  getpeername returns an error.
+
+  * Fixed build defect on platforms that don't define a type for
+  socklen_t.
+
+[9.3.2]
+  * The SED environment variable is now set automatically in the
+  libtool script, during configure.
+
+  * Fixed linking problem on platforms (such as Solaris) where the
+  resolv library is needed to use hstrerror.
+
+  * RCSSBase now will compile with either sstream or strstream,
+  depending on which is available.
+
+  * Removed debugging output from rcssnet library
+
+[9.3.1]
+  * Fixed bug in rpm build that did not include the new rcssnet library
+
+[9.3.0]
+  * udpsocket.h has now been turned into a small networking library
+  called rcssnet and the header has been moved into rcssbase/net and
+  split up depending on the functionality they provide.  Please see
+  the source code for more details.  Clients using the library can use
+  the AC_LIB_RCSSNET autoconf macro supplied in ac_lib_rcssnet.m4 to
+  detect the presents of the library.
+
+[9.2.0]
+  * Fixed warnings with gcc3.2
+
+[9.1.5]
+  * Configuration now fails if the SED environment variable is not
+  set.  Libtool needs this to be set to function correctly
+
+[9.1.4]
+  * Fixed compilation problems introduced by libtools 1.4.3 on
+  platforms where the SED environment variable is not set.
+
+[9.1.1]
+  * Fixed compilation problem on some platforms due to
+  incompatibilities between gcc3.2 and inttypes.h
+
+[9.1.0]
+  * LibLoader has been added to encapsulate the loading of libraries.
+  It has a very limited interface(for safety reasons), which requires
+  you to provide initialization and finalization functions to register
+  and deregister classes with the ObjFact class to be able to use the
+  library.  Please see rcsstest/LibLoader/libtest.cpp and
+  rcssserver/src/main.C for examples of how to use the LibLoader.
+
+  * A ObjFact template has been added to provide a generic framework
+  for registering classes and creating instances of those classes,
+  based on some key.  Please see rcsstest/LibLoader for an example of
+  how to use the ObjFact
+
+  * Fixed defect in TimeOut exception, where what did not return
+  anything.
+
+  * Fixed compilation problem in rcssserver when flex was not
+  installed on the machine.  FlexLexer.h is now installed in
+  include/rcssbase
+
+  * Fixed bug in gzstream
+
+[9.0.4]
+  * Added threading classes that encapsulate the pthread API
+
+  * Added iostream compatible compression/decompression stream that takes
+  another stream of streambuf as an argument.
+
+  * Added iostream compatible socket stream
+
+  * UDPSocket has two new recv methods, that allow a timeout to be specified.
+  Overall they are slower the the versions without timeouts, so if you find you
+  are consitantly specifying a timeout of -1 (wait forever) or 0 (no wait) then
+  you are better of making the socket blocking or non-blocking and using the
+  versions without timeouts.
+
+  * UDPSocket has a new static method that calculates the binary host address
+  in network byte order from a host string.  This string can be the host name
+  or alias, the host address in standard dot notation (IPv4 and possibly IPv6)
+  or in colon notation (IPv6).
+
+[9.0.3]
+
+  * Fixed problems with parser.h and gcc 3.x.  Thanks go to Fredrik Heintz for
+  the corrections.
+
+[9.0.2]
+  * UDPSockets now have the close-on-exec flags set automatically.
+
+[9.0.0]
+  * Added rcss::Parser, a abstract parser class
+
+[8.04]
+  * Removed exceptions from UDPSocket, due to their inefficiency.  This has
+  resulted in a major change the the UDPSocket interface.
+
+  * Added sendChecked and recvChecked functions that will try to resend if the
+  error was EINTR or EWOULDBLOCK and will try to re-receive if the error was
+  EINTR.
+
+  * Replaced void* with char* in all UDPSocket methods

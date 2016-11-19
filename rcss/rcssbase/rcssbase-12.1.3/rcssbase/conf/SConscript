@@ -1,0 +1,68 @@
+# -*-python-*-
+import os, re, string
+
+Import('env unit_env')
+
+if env['PLATFORM'] == 'win32':
+	CONF_LIBS=['rcsslib']
+else:
+	CONF_LIBS=['rcsslib', 'boost_filesystem']
+
+env.Append(LIBPATH = ['../lib'])
+rcssconfparser = env.SharedLibrary( 'rcssconfparser',
+				    ['parser.cpp',
+				     'statushandler.cpp',
+				     'streamstatushandler.cpp',
+				     'builder.cpp'],
+				    LIBS=CONF_LIBS )
+
+Default(rcssconfparser)
+
+install = Install( env[ 'libdir' ], rcssconfparser )
+Alias('install', install)
+
+install = Install( os.path.join( env[ 'pkgincludedir' ], 'conf' ),
+		   ['builder.hpp',
+		    'statushandler.hpp',
+		    'streamstatushandler.hpp',
+		    'paramsetter.hpp',
+		    'paramgetter.hpp',
+		    'parser.hpp'])
+Alias('install', install)
+
+
+if unit_env['HAVE_CPPUNIT']:
+	unit_test = unit_env.Program('buildertest',
+				     [unit_env['test_main'], 
+				      'buildertest.cpp'],
+				     LIBS=['rcssconfparser',
+					   unit_env['CPPUNIT_LIB']])
+	unit_env.AppendENVPath('PATH', os.path.join( os.getcwd(), '..' ))
+	unit_env.AppendENVPath('PATH', os.path.join( os.getcwd(), '..', '..', 'error' ))
+	result = unit_env.Command( 'buildertest.xml', 
+				   str( unit_test[0] ), 
+				   ["$SOURCE $TARGET"],
+				   ENV = unit_env['ENV'])
+	Alias( 'check', result )
+	
+	
+	unit_env.Append(LIBPATH = ['../lib'])
+	unit_env.Append(LIBPATH = ['../lib/loadertest'])
+	unit_test = unit_env.Program('parsertest',
+				     [unit_env['test_main'], 'parsertest.cpp'],
+				     LIBS=['rcssconfparser',
+					   'rcsslib',
+					   'base',
+					   unit_env['CPPUNIT_LIB']])
+	Depends(unit_test, 'test.conf');
+	Depends(unit_test, 
+		'#rcssbase/lib/' + unit_env[ 'PROGPREFIX' ] + 'rcssmodtest' + unit_env[ 'PROGSUFFIX' ]);
+	unit_env.AppendENVPath('PATH', os.path.join( os.getcwd(), '..', 'lib' ))
+	unit_env.AppendENVPath('PATH', os.path.join( os.getcwd(), '..' ))
+	unit_env.AppendENVPath('PATH', os.path.join( os.getcwd(), '..', '..', 'error' ))
+	result = unit_env.Command( 'parsertest.xml', 
+				   str( unit_test[0] ), 
+				   ["$SOURCE $TARGET"],
+				   ENV = unit_env['ENV'])
+	Alias( 'check', result )
+	

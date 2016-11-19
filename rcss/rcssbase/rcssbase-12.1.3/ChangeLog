@@ -1,0 +1,2904 @@
+2008-11-17  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* NEWS:
+	* configure.ac:
+	* m4/ax_boost_system.m4:
+	* m4/ax_boost_filesystem.m4:
+	* rcssbase/conf/Makefile.am:
+	* rcssbase/lib/Makefile.am:
+	- fixed build problems with boost::system.
+	- updated a point version. Official release 12.1.3.
+
+2008-09-25  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* NEWS:
+	* configure.ac:
+	- updated a point version. Official release 12.1.2.
+
+2008-09-16  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* configure.ac:
+	* rcssbase/conf/Makefile.am:
+	* rcssbase/net/Makefile.am:
+	- fixed library dependencies.
+
+2008-07-07  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* NEWS:
+	* configure.ac:
+	- updated a point version. Official release 12.1.1.
+
+	* rcssbase/conf/parser.cpp:
+	- fixed a gcc-4.4 build problem
+
+	* rcssbase/gzip/gzfstream.cpp:
+	- fixed a gcc-4.4 warning.
+
+2008-07-05  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/conf/streamstatushandler.cpp:
+	* rcssbase/error/error.cpp:
+	* rcssbase/lib/factory.hpp:
+	* rcssbase/lib/libimporter.cpp:
+	* rcssbase/lib/loaderimpl.hpp:
+	* rcssbase/net/addr.cpp:
+	- patched rcssbase-12.1.0-gcc43fix.patch
+
+2008-04-12  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* NEWS:
+	* configure.ac:
+	- updated a minor version. Official release 12.1.0.
+
+	* rcssbase/FlexLexer.h:
+	- tested flex-2.5.4, but could not succeed to keep the
+	compatibility. flex-2.5.33 or later is required for maintainance.
+
+2008-03-30  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/conf/builder.hpp:
+	* rcssbase/conf/paramgetter.hpp:
+	* rcssbase/conf/paramsetter.hpp:
+	* rcssbase/conf/statushandler.hpp:
+	* rcssbase/conf/streamstatushandler.cpp:
+	* rcssbase/conf/streamstatushandler.hpp:
+	* rcssbase/lib/factory.hpp:
+	* rcssbase/lib/loader.cpp:
+	* rcssbase/lib/loader.hpp:
+	* rcssbase/lib/loaderimpl.cpp:
+	* rcssbase/lib/loaderimpl.hpp:
+	* rcssbase/lib/preloader.cpp:
+	* rcssbase/lib/preloader.hpp:
+	* rcssbase/lib/preloadloader.cpp:
+	* rcssbase/lib/preloadloader.hpp:
+	* rcssbase/lib/systemloader.cpp:
+	* rcssbase/lib/systemloader.hpp:
+	* rcssbase/lib/weak_ptr.hpp:
+	* rcssbase/net/addr.cpp:
+	* rcssbase/net/addr.hpp:
+	* rcssbase/net/handler.cpp:
+	* rcssbase/net/handler.hpp:
+	* rcssbase/net/iosocketstream.hpp:
+	* rcssbase/net/isocketstream.hpp:
+	* rcssbase/net/osocketstream.hpp:
+	* rcssbase/net/socket.cpp:
+	* rcssbase/net/socket.hpp:
+	* rcssbase/net/tcpsocket.cpp:
+	* rcssbase/net/tcpsocket.hpp:
+	* rcssbase/net/udpsocket.cpp:
+	* rcssbase/net/udpsocket.hpp:
+	- fixed coding style.
+
+2008-03-03  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/cond.h:
+	* rcssbase/mutex.h:
+	* rcssbase/sharedvar.h:
+	- fixed a header file dependency.
+
+2008-02-21  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/net/addr.cpp:
+	* rcssbase/net/socketstreambuf.hpp:
+	- claned up
+	- changed buffer allocation policy.
+	- tested xsputn()
+
+2008-02-20  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/gzip/gzstream.cpp:
+	* rcssbase/gzip/gzstream.hpp:
+	* rcssbase/net/socketstream.hpp:
+	- fixed a dependency between gzstreambuf and gzstream.
+	- fixed coding style.
+
+2008-02-18  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* NEWS:
+	* configure.ac:
+	- updated a version number string. Official release 12.0.0.
+
+2008-02-13  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/FlexLexer.h:
+	- supported flex-2.5.34.
+
+2008-02-10  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* NEWS:
+	* configure.ac:
+	- updated a NEWS file.
+	- updated a version number. Development Release
+	12.0.0_pre-20080210.
+
+2008-01-31  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/conf/Makefile.am:
+	- updated libtool version number from "1:0:0" to "2:0:0".
+
+2008-01-29  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/conf/builder.cpp:
+	* rcssbase/conf/builder.hpp:
+	- added version variables and procedure to check them.
+
+2007-11-19  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* Makefile.am:
+	* bootstrap:
+	* configure.ac:
+	* rcssbase/Makefile.am:
+	* rcssbase/conf/Makefile.am:
+	* rcssbase/error/Makefile.am:
+	* rcssbase/gzip/Makefile.am:
+	* rcssbase/lib/Makefile.am:
+	* rcssbase/lib/factorytest/Makefile.am:
+	* rcssbase/lib/loadertest/Makefile.am:
+	* rcssbase/net/Makefile.am:
+	* rcssbase/net/addrtest/Makefile.am:
+	* rcssbase/net/iosocketstreamtest/Makefile.am:
+	* rcssbase/net/tcpsockettest/Makefile.am:
+	* rcssbase/net/udpsockettest/Makefile.am:
+	- removed unused macros and related variables.
+
+2007-05-31  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* configure.ac:
+	Updated a minor version. Official Relaase 11.1.0.
+
+2007-05-21  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* configure.ac:
+	Updated a package micro version.
+
+	* rcssbase/gzip/Makefile.am:
+	Updated a library revision number.
+
+2007-05-20  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/gzip/gzstream.cpp:
+	Fixed bugs in the compression stream reset operation.
+
+2007-04-25  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/lib/factory.hpp:
+	* rcssbase/lib/systemloader.cpp:
+	Fixed coding style.
+
+2007-04-20  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* configure.ac:
+	* rcssbase/conf/Makefile.am:
+	* rcssbase/lib/Makefile.am:
+	Fixed build problem on x86_64 OS.
+
+2007-04-12  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/gzip/gzfstream.cpp:
+	Fixed bug in gzfilebuf::seekoff()
+
+2007-04-11  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/gzip/gzfstream.cpp:
+	* rcssbase/gzip/gzfstream.hpp:
+	Reimplemented.
+
+	* configure.ac:
+	Fixed defect in ZLib checking.
+
+	* rcssbase/gzip/Makefile.am:
+	Fixed header installation directory.
+
+2007-04-10  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* configure.ac:
+	Added AC_CONFIG_HEADERS([config.h])
+
+2007-04-09  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/conf/parser.cpp:
+	Fixed problem to parse a string value that has spaces in command
+	line options.
+
+2007-03-29  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/conf/parser.cpp:
+	Replaced order of parsing rule. boost::spirit::strict_real_p must
+	be given priority than boost::spirit::int_p.
+
+	* rcssbase/mutex.h:
+	Fixed build problems on rcssserver.
+
+	* rcssbase/FlexLexer.h:
+	Replaced by the latest version.
+
+	* rcssbase/Makefile.am:
+	* rcssbase/conf/Makefile.am:
+	Added missing entries.
+
+2007-03-27  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* rcssbase/conf/Makefile.am:
+	* rcssbase/error/error.hpp:
+	* rcssbase/gzip/gzfstream.hpp:
+	* rcssbase/gzip/gzstream.hpp:
+	* rcssbase/lib/systemloader.hpp:
+	Fixed build problems.
+
+	* configure.ac:
+	Added AX_BOOST_BASE and AX_BOOST_FILESYSTEM in order to check the
+	boost existence.
+
+2005-08-01	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/SConscript
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/conf/streamstatushandler.cpp
+	* ./rcssbase/error/SConscript
+	* ./rcssbase/gzip/SConscript
+	* ./rcssbase/lib/SConscript
+	* ./rcssbase/lib/factory.hpp
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.cpp
+	* ./rcssbase/lib/preloader.cpp
+	* ./rcssbase/lib/preloader.hpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	* ./rcssbase/lib/factorytest/SConscript
+	* ./rcssbase/lib/loadertest/SConscript
+	* ./rcssbase/net/SConscript
+	* ./rcssbase/net/addrtest/SConscript
+	* ./rcssbase/net/iosocketstreamtest/SConscript
+	* ./rcssbase/net/tcpsockettest/SConscript
+	* ./rcssbase/net/udpsockettest/SConscript
+	Fixes for porting issues
+
+2005-07-29	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/builder.hpp
+	Made another method public
+
+	* ./rcssbase/net/addr.hpp
+	Fixed incompatibility with windows.h
+
+2005-07-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/builder.cpp
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/parsertest.cpp
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/socket.hpp
+	* ./rcssbase/net/tcpsocket.hpp
+	* ./rcssbase/net/udpsocket.hpp
+	Fixed problems when using rcssbase libs
+
+2005-07-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/SConscript
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/error/SConscript
+	* ./rcssbase/lib/SConscript
+	* ./rcssbase/lib/factorytest/SConscript
+	* ./rcssbase/lib/loadertest/SConscript
+	* ./rcssbase/net/SConscript
+	* ./rcssbase/net/addrtest/SConscript
+	* ./rcssbase/net/iosocketstreamtest/SConscript
+	* ./rcssbase/net/tcpsockettest/SConscript
+	* ./rcssbase/net/udpsockettest/SConscript
+	Added default target and made unit tests non-default
+
+/* -*-change-log-*- */
+
+2005-07-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./NEWS
+	Added details about recent changes
+
+2005-07-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/conf/builder.cpp
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parsertest.cpp
+	* ./rcssbase/conf/statushandler.cpp
+	* ./rcssbase/conf/statushandler.hpp
+	* ./rcssbase/conf/streamstatushandler.cpp
+	* ./rcssbase/conf/streamstatushandler.hpp
+	* ./rcssbase/lib/SConscript
+	* ./rcssbase/lib/factory.hpp
+	* ./rcssbase/lib/libimporter.cpp
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.cpp
+	* ./rcssbase/lib/loaderimpl.hpp
+	* ./rcssbase/lib/preloader.cpp
+	* ./rcssbase/lib/preloader.hpp
+	* ./rcssbase/lib/preloadloader.cpp
+	* ./rcssbase/lib/preloadloader.hpp
+	* ./rcssbase/lib/rcssmodtest.cpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	* ./rcssbase/lib/loadertest/SConscript
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	Lots of boost::filesystem refactoring
+
+2005-07-26	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/parser.h
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/conf/builder.cpp
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/statushandler.cpp
+	* ./rcssbase/conf/statushandler.hpp
+	* ./rcssbase/conf/streamstatushandler.cpp
+	* ./rcssbase/conf/streamstatushandler.hpp
+	* ./rcssbase/conf/test.conf
+	Fixed handling of quoted strings
+	Cleaned up some of the recent changes
+
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.hpp
+	* ./rcssbase/lib/preloadloader.cpp
+	* ./rcssbase/lib/preloadloader.hpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	Converted listAvailableModules to user strings
+
+	* ./SConstruct
+	Fixed env problems on non-windows systems
+	Added boost_filesystem library check
+	* ./rcssbase/conf/SConscript
+	Added boost_filesystem lib
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parsertest.cpp
+	Fixed bug in joined paths
+	Fixed bug in newlines
+
+2005-07-25	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/parser.h
+	* ./rcssbase/conf/builder.cpp
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/parsertest.cpp
+	* ./rcssbase/conf/test.conf
+	Added better error handling and some filename/streamname fiddling
+
+2005-07-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/test.conf
+	More cleanup and testing
+
+2005-07-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/conf/builder.cpp
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/genericbuilder.cpp (removed)
+	* ./rcssbase/conf/genericbuilder.hpp (removed)
+	* ./rcssbase/conf/paramgetter.hpp (added)
+	* ./rcssbase/conf/paramsetter.hpp (added)
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/parsertest.cpp
+	* ./rcssbase/conf/statushandler.cpp (added)
+	* ./rcssbase/conf/statushandler.hpp (added)
+	* ./rcssbase/conf/streamstatushandler.cpp (added)
+	* ./rcssbase/conf/streamstatushandler.hpp (added)
+	* ./rcssbase/conf/test.conf (added)
+	More code clean up.  Look! it staring to sparkle :)
+
+2005-07-20	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/Makefile.am
+	* ./rcssbase/conf/lexer.hpp (removed)
+	* ./rcssbase/conf/lexer.lpp (removed)
+	* ./rcssbase/conf/parse.ypp (removed)
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	Just some cleaning up
+
+2005-07-20	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/parser.h
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/conf/builder.cpp
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/genericbuilder.cpp
+	* ./rcssbase/conf/genericbuilder.hpp
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/parsertest.cpp
+	More work on the conf parser.  It's working again, but error handling
+	is poor and the code structure needs to be cleaned up.
+
+2005-07-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	Fixed define for when sstream is available
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	more work on the spirit parser
+
+2005-07-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/FlexLexer.h
+	* ./rcssbase/SConscript
+	* ./rcssbase/parser.h
+	* ./rcssbase/version.hpp
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/conf/builder.cpp
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/buildertest.cpp
+	* ./rcssbase/conf/genericbuilder.hpp
+	* ./rcssbase/conf/lexer.hpp
+	* ./rcssbase/conf/lexer.lpp
+	* ./rcssbase/conf/parse.ypp
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/parsertest.cpp
+	Reworking the conf parser to use boost spirit
+
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.hpp
+	* ./rcssbase/lib/preloader.hpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	Fixed some windows bugs (still need to removed some debug output)
+
+2005-07-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/SConscript
+	* ./rcssbase/vertest.cpp
+	* ./rcssbase/lib/factorytest/factorytest.cpp
+	* ./rcssbase/lib/loadertest/SConscript
+	* ./rcssbase/lib/loadertest/base.cpp
+	* ./rcssbase/lib/loadertest/derived1.cpp
+	* ./rcssbase/lib/loadertest/derived3.cpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	* ./rcssbase/net/SConscript
+	* ./rcssbase/net/tcpsockettest/tcpsockettest.cpp
+	Scons fixes for os x
+
+2005-07-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/SConscript
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loadertest/SConscript (added)
+	* ./rcssbase/lib/loadertest/base.hpp
+	* ./rcssbase/lib/loadertest/derived1.cpp
+	* ./rcssbase/lib/loadertest/derived3.cpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	Converted unit tests for lib/loader to WIndows and SCons
+
+2005-07-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/SConscript
+	* ./rcssbase/lib/factorytest/SConscript (added)
+	* ./rcssbase/lib/factorytest/factorytest.cpp
+	Converted factory test to cppunit and scons
+
+2005-07-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/SConscript
+	* ./rcssbase/net/SConscript
+	* ./rcssbase/net/addrtest/SConscript
+	* ./rcssbase/net/addrtest/addrtest.cpp
+	* ./rcssbase/net/iosocketstreamtest/SConscript
+	* ./rcssbase/net/tcpsockettest/SConscript
+	* ./rcssbase/net/udpsockettest/SConscript
+	Got the net unittests working
+	Reduced the amount of the users environment brought into scons
+
+2005-07-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/SConscript
+	* ./rcssbase/net/SConscript
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/addrtest/SConscript (added)
+	* ./rcssbase/net/addrtest/addrtest.cpp
+	* ./rcssbase/net/iosocketstreamtest/SConscript (added)
+	* ./rcssbase/net/iosocketstreamtest/iosocketstreamtest.cpp
+	* ./rcssbase/net/tcpsockettest/SConscript (added)
+	* ./rcssbase/net/tcpsockettest/tcpsockettest.cpp
+	* ./rcssbase/net/udpsockettest/SConscript (added)
+	* ./rcssbase/net/udpsockettest/udpsockettest.cpp
+	Converted rcssnet unittests to scons and cppunit.  Not quite working
+	yet
+
+2005-07-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./SConstruct
+	* ./configure.ac
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/SConscript
+	* ./rcssbase/testmain.cpp (added)
+	* ./rcssbase/version.cpp (added)
+	* ./rcssbase/version.cpp.in (removed)
+	* ./rcssbase/vertest.cpp
+	* ./rcssbase/conf/Makefile.am
+	* ./rcssbase/error/Makefile.am
+	* ./rcssbase/gzip/Makefile.am
+	* ./rcssbase/lib/Makefile.am
+	* ./rcssbase/net/Makefile.am
+	Converted version.cpp to work with scons
+	Added SConstruct and SConscript to EXTRA_DIST
+	Converted vertest to work with cppunit
+
+2005-07-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/SConscript
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/error/SConscript
+	* ./rcssbase/gzip/SConscript
+	* ./rcssbase/lib/SConscript
+	* ./rcssbase/net/SConscript
+	Added install rules for the remaining sections
+
+2005-07-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/error/SConscript
+	Added install rules for rcsserror
+
+/* -*-change-log-*- */
+
+2005-07-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/SConscript
+	Added support for DESTDIR
+
+2005-07-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./configure.ac
+	* ./rcssbase/SConscript
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/conf/parser.hpp
+	Updated install locations in scons
+	Fixed windows build errors
+
+2005-07-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	Added install information
+
+2005-07-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./configure.ac
+	* ./rcssbase/conf/SConscript
+	* ./rcssbase/lib/SConscript
+	* ./rcssbase/lib/preloader.cpp
+	Fixed for scons building
+
+2005-07-13	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/SConscript
+	* ./rcssbase/conf/SConscript (added)
+	started Scons support for rcssconf library
+
+2005-07-13	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/SConscript
+	* ./rcssbase/lib/SConscript (added)
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.cpp
+	* ./rcssbase/lib/loaderimpl.hpp
+	* ./rcssbase/lib/preloader.hpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	Porting rcsslib to windows/scons
+
+2005-07-13	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./SConstruct
+	* ./rcssbase/SConscript
+	* ./rcssbase/gzip/SConscript (added)
+	* ./rcssbase/gzip/gzfstream.hpp
+	* ./rcssbase/gzip/gzstream.cpp
+	* ./rcssbase/gzip/gzstream.hpp
+	Porting rcssgz to windows
+	Added cppunit detection
+
+2005-07-13	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	Removed RCSSTest guff that would cause configure to fail on windows
+
+	* ./rcssbase/net.hpp
+	Fixed locations of net headers
+
+	* ./SConstruct (added)
+	* ./rcssbase/rcssbaseconfig.hpp (added)
+	* ./rcssbase/SConscript (added)
+	* ./rcssbase/error/error.hpp
+	* ./rcssbase/error/SConscript (added)
+	* ./rcssbase/net/SConscript (added)
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/socket.hpp
+	* ./rcssbase/net/udpsocket.hpp
+	* ./rcssbase/net/tcpsocket.hpp
+	Adding SCons files and fixing Windows build
+
+2005-06-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./bootstrap
+	Added @INCLUDE_MK_FILE@ to DISTCLEANFILES
+
+2005-06-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./bootstrap
+	Fixed problems setting up config files
+
+	* ./configure.ac
+	Updated for new macros
+
+	* ./Makefile.am
+	* ./boost/assert.hpp (removed)
+	* ./boost/checked_delete.hpp (removed)
+	* ./boost/config.hpp (removed)
+	* ./boost/cstdint.hpp (removed)
+	* ./boost/current_function.hpp (removed)
+	* ./boost/integer_traits.hpp (removed)
+	* ./boost/intrusive_ptr.hpp (removed)
+	* ./boost/iterator.hpp (removed)
+	* ./boost/limits.hpp (removed)
+	* ./boost/operators.hpp (removed)
+	* ./boost/random.hpp (removed)
+	* ./boost/shared_ptr.hpp (removed)
+	* ./boost/static_assert.hpp (removed)
+	* ./boost/throw_exception.hpp (removed)
+	* ./boost/weak_ptr.hpp (removed)
+	* ./boost/config/posix_features.hpp (removed)
+	* ./boost/config/select_compiler_config.hpp (removed)
+	* ./boost/config/select_platform_config.hpp (removed)
+	* ./boost/config/select_stdlib_config.hpp (removed)
+	* ./boost/config/suffix.hpp (removed)
+	* ./boost/config/user.hpp (removed)
+	* ./boost/config/compiler/borland.hpp (removed)
+	* ./boost/config/compiler/comeau.hpp (removed)
+	* ./boost/config/compiler/common_edg.hpp (removed)
+	* ./boost/config/compiler/compaq_cxx.hpp (removed)
+	* ./boost/config/compiler/gcc.hpp (removed)
+	* ./boost/config/compiler/greenhills.hpp (removed)
+	* ./boost/config/compiler/hp_acc.hpp (removed)
+	* ./boost/config/compiler/intel.hpp (removed)
+	* ./boost/config/compiler/kai.hpp (removed)
+	* ./boost/config/compiler/metrowerks.hpp (removed)
+	* ./boost/config/compiler/mpw.hpp (removed)
+	* ./boost/config/compiler/sgi_mipspro.hpp (removed)
+	* ./boost/config/compiler/sunpro_cc.hpp (removed)
+	* ./boost/config/compiler/vacpp.hpp (removed)
+	* ./boost/config/compiler/visualc.hpp (removed)
+	* ./boost/config/platform/aix.hpp (removed)
+	* ./boost/config/platform/amigaos.hpp (removed)
+	* ./boost/config/platform/beos.hpp (removed)
+	* ./boost/config/platform/bsd.hpp (removed)
+	* ./boost/config/platform/cygwin.hpp (removed)
+	* ./boost/config/platform/hpux.hpp (removed)
+	* ./boost/config/platform/irix.hpp (removed)
+	* ./boost/config/platform/linux.hpp (removed)
+	* ./boost/config/platform/macos.hpp (removed)
+	* ./boost/config/platform/solaris.hpp (removed)
+	* ./boost/config/platform/win32.hpp (removed)
+	* ./boost/config/stdlib/dinkumware.hpp (removed)
+	* ./boost/config/stdlib/libcomo.hpp (removed)
+	* ./boost/config/stdlib/libstdcpp3.hpp (removed)
+	* ./boost/config/stdlib/modena.hpp (removed)
+	* ./boost/config/stdlib/msl.hpp (removed)
+	* ./boost/config/stdlib/roguewave.hpp (removed)
+	* ./boost/config/stdlib/sgi.hpp (removed)
+	* ./boost/config/stdlib/stlport.hpp (removed)
+	* ./boost/config/stdlib/vacpp.hpp (removed)
+	* ./boost/detail/lightweight_mutex.hpp (removed)
+	* ./boost/detail/limits.hpp (removed)
+	* ./boost/detail/lwm_gcc.hpp (removed)
+	* ./boost/detail/lwm_irix.hpp (removed)
+	* ./boost/detail/lwm_linux.hpp (removed)
+	* ./boost/detail/lwm_nop.hpp (removed)
+	* ./boost/detail/lwm_pthreads.hpp (removed)
+	* ./boost/detail/lwm_win32.hpp (removed)
+	* ./boost/detail/lwm_win32_cs.hpp (removed)
+	* ./boost/detail/shared_count.hpp (removed)
+	* ./boost/detail/shared_ptr_nmt.hpp (removed)
+	* ./boost/detail/workaround.hpp (removed)
+	* ./boost/mpl/bool.hpp (removed)
+	* ./boost/mpl/bool_fwd.hpp (removed)
+	* ./boost/mpl/aux_/lambda_support.hpp (removed)
+	* ./boost/mpl/aux_/template_arity_fwd.hpp (removed)
+	* ./boost/mpl/aux_/config/lambda.hpp (removed)
+	* ./boost/mpl/aux_/config/overload_resolution.hpp (removed)
+	* ./boost/mpl/aux_/config/preprocessor.hpp (removed)
+	* ./boost/mpl/aux_/config/static_constant.hpp (removed)
+	* ./boost/mpl/aux_/config/ttp.hpp (removed)
+	* ./boost/mpl/aux_/preprocessor/params.hpp (removed)
+	* ./boost/preprocessor/cat.hpp (removed)
+	* ./boost/preprocessor/config/config.hpp (removed)
+	* ./boost/random/additive_combine.hpp (removed)
+	* ./boost/random/bernoulli_distribution.hpp (removed)
+	* ./boost/random/binomial_distribution.hpp (removed)
+	* ./boost/random/cauchy_distribution.hpp (removed)
+	* ./boost/random/discard_block.hpp (removed)
+	* ./boost/random/exponential_distribution.hpp (removed)
+	* ./boost/random/gamma_distribution.hpp (removed)
+	* ./boost/random/geometric_distribution.hpp (removed)
+	* ./boost/random/inversive_congruential.hpp (removed)
+	* ./boost/random/lagged_fibonacci.hpp (removed)
+	* ./boost/random/linear_congruential.hpp (removed)
+	* ./boost/random/linear_feedback_shift.hpp (removed)
+	* ./boost/random/lognormal_distribution.hpp (removed)
+	* ./boost/random/mersenne_twister.hpp (removed)
+	* ./boost/random/normal_distribution.hpp (removed)
+	* ./boost/random/poisson_distribution.hpp (removed)
+	* ./boost/random/random_number_generator.hpp (removed)
+	* ./boost/random/ranlux.hpp (removed)
+	* ./boost/random/shuffle_output.hpp (removed)
+	* ./boost/random/subtract_with_carry.hpp (removed)
+	* ./boost/random/triangle_distribution.hpp (removed)
+	* ./boost/random/uniform_01.hpp (removed)
+	* ./boost/random/uniform_int.hpp (removed)
+	* ./boost/random/uniform_on_sphere.hpp (removed)
+	* ./boost/random/uniform_real.hpp (removed)
+	* ./boost/random/uniform_smallint.hpp (removed)
+	* ./boost/random/xor_combine.hpp (removed)
+	* ./boost/random/detail/const_mod.hpp (removed)
+	* ./boost/random/detail/iterator_mixin.hpp (removed)
+	* ./boost/random/detail/signed_unsigned_compare.hpp (removed)
+	* ./boost/type_traits/is_float.hpp (removed)
+	* ./boost/type_traits/detail/bool_trait_def.hpp (removed)
+	* ./boost/type_traits/detail/bool_trait_undef.hpp (removed)
+	* ./boost/type_traits/detail/template_arity_spec.hpp (removed)
+	Removed boost
+
+	* ./rcssbase/conf/genericbuilder.cpp
+	* ./rcssbase/conf/lexer.lpp
+	Merge from 10_0 branch
+
+	* ./rcssbase/lib/loadertest/Makefile.am
+	Removed generates source file libimports.cpp from distribution
+
+2005-04-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	Created minor branch: rcssbase-10_0
+	Use:
+	`cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sserver login`
+	`cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sserver co -r rcssbase-10_0 rcssbase`
+	to access the branch
+
+2005-02-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./bootstrap
+	Updated to use new m4 directory
+
+2005-02-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Updated to use new common m4 directory
+
+2005-02-24	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./INSTALL
+	* ./Makefile.am
+	* ./acinclude.m4
+	* ./bootstrap
+	* ./configure.ac
+	* ./install-sh
+	* ./missing
+	* ./mkinstalldirs
+	* ./acdir/ax_append_to_file.m4
+	* ./acdir/ax_dist_rpm.m4
+	* ./acdir/ax_extra_dist.m4
+	* ./acdir/ax_file_escapes.m4
+	* ./acdir/ax_mk_macros.m4
+	* ./acdir/ax_print_to_file.m4
+	* ./acdir/ax_split_version.m4
+	* ./acdir/ax_upload.m4
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/conf/Makefile.am
+	* ./rcssbase/error/Makefile.am
+	* ./rcssbase/gzip/Makefile.am
+	* ./rcssbase/lib/Makefile.am
+	* ./rcssbase/lib/factorytest/Makefile.am
+	* ./rcssbase/lib/loadertest/Makefile.am
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/addrtest/Makefile.am
+	* ./rcssbase/net/iosocketstreamtest/Makefile.am
+	* ./rcssbase/net/tcpsockettest/Makefile.am
+	* ./rcssbase/net/udpsockettest/Makefile.am
+	More release system updates
+
+2005-02-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	Update version number
+
+2005-02-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	Released rcssbase-10.0.9
+	You can access this release by running:
+	    `cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sserver login`
+	    `cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sserver co -r rcssbase-10_0_9 -d rcssbase-10.0.9 rcssbase`
+	The release will then be available in the rcssbase-10.0.9 directory
+
+2005-02-10	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	corrected spec.tmpl location
+
+2005-02-10	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./bootstrap
+	* ./acdir/ax_add_recursive_mk_macro.m4
+	* ./acdir/ax_append_to_file.m4
+	* ./acdir/ax_dist_rpm.m4
+	* ./acdir/ax_file_escapes.m4
+	* ./acdir/ax_mk_macros.m4
+	* ./acdir/ax_print_to_file.m4
+	* ./acdir/ax_split_version.m4
+	More fixes to release system
+
+2005-02-08	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Updated extra dist files
+
+2005-02-08	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./bootstrap
+	* ./configure.ac
+	* ./acdir/ax_add_am_macro.m4 (removed)
+	* ./acdir/ax_add_mk_macro.m4 (added)
+	* ./acdir/ax_add_recursive_am_macro.m4 (removed)
+	* ./acdir/ax_add_recursive_mk_macro.m4 (added)
+	* ./acdir/ax_am_macros.m4 (removed)
+	* ./acdir/ax_append_to_file.m4
+	* ./acdir/ax_cvs.m4
+	* ./acdir/ax_dist_msi.m4
+	* ./acdir/ax_dist_rpm.m4
+	* ./acdir/ax_extra_dist.m4
+	* ./acdir/ax_file_escapes.m4
+	* ./acdir/ax_install_files.m4
+	* ./acdir/ax_mk_macros.m4 (added)
+	* ./acdir/ax_print_to_file.m4
+	* ./acdir/ax_split_version.m4
+	* ./acdir/ax_upload.m4
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/conf/Makefile.am
+	* ./rcssbase/error/Makefile.am
+	* ./rcssbase/gzip/Makefile.am
+	* ./rcssbase/lib/Makefile.am
+	* ./rcssbase/lib/factorytest/Makefile.am
+	* ./rcssbase/lib/loadertest/Makefile.am
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/addrtest/Makefile.am
+	* ./rcssbase/net/iosocketstreamtest/Makefile.am
+	* ./rcssbase/net/tcpsockettest/Makefile.am
+	* ./rcssbase/net/udpsockettest/Makefile.am
+	Fixed bug in new dev rules
+
+2005-01-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./bootstrap
+	Added @INC_AMINCLUDE@ to libltdl/Makfile.ma and AX_INSTALL_FILES
+	to libltdl/configure.ac
+
+2005-01-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./bootstrap
+	* ./configure.ac
+	* ./cvs.am (removed)
+	* ./dist.am (removed)
+	* ./msi.am (removed)
+	* ./rel.awk (removed)
+	* ./rpm.am (removed)
+	* ./sf.am (removed)
+	* ./acdir/ax_add_am_macro.m4 (added)
+	* ./acdir/ax_add_recursive_am_macro.m4 (added)
+	* ./acdir/ax_am_macros.m4 (added)
+	* ./acdir/ax_append_to_file.m4 (added)
+	* ./acdir/ax_cvs.m4 (added)
+	* ./acdir/ax_dist_msi.m4 (added)
+	* ./acdir/ax_dist_rpm.m4 (added)
+	* ./acdir/ax_extra_dist.m4 (added)
+	* ./acdir/ax_file_escapes.m4 (added)
+	* ./acdir/ax_install_files.m4 (added)
+	* ./acdir/ax_print_to_file.m4 (added)
+	* ./acdir/ax_split_version.m4 (added)
+	* ./acdir/ax_upload.m4 (added)
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/conf/Makefile.am
+	* ./rcssbase/error/Makefile.am
+	* ./rcssbase/gzip/Makefile.am
+	* ./rcssbase/lib/Makefile.am
+	* ./rcssbase/lib/factorytest/Makefile.am
+	* ./rcssbase/lib/loadertest/Makefile.am
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/addrtest/Makefile.am
+	* ./rcssbase/net/iosocketstreamtest/Makefile.am
+	* ./rcssbase/net/tcpsockettest/Makefile.am
+	* ./rcssbase/net/udpsockettest/Makefile.am
+	Updated to use newer developer macros
+
+2005-01-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./spec.tmpl (removed)
+	* ./spec.tmpl.in (added)
+
+	Replaced spec.tmpl with spec.tmpl.in
+
+2004-12-09	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./PLATFORMS
+	Updated platform notes
+
+2004-06-21	Tom Howard	<tomhoward@users.sf.net>
+
+	Removed old version file
+
+2004-06-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	Updated version number
+
+2004-06-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	Released rcssbase-10.0.8
+	You can access this release by running:
+		cvs co -r  -d rcssbase-10.0.8 rcssbase
+	The release will then be available in the rcssbase-10.0.8 directory
+
+2004-06-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./NEWS
+	Updated about last change
+
+2004-06-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	* ./rcssbase.ncb
+	* ./sf.am
+	* ./rcssbase/version.cpp
+	Fixed build issues
+
+2004-06-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rpm.am
+	Fixed bug in .rpmmacros instructions
+
+2004-06-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./NEWS
+	* ./PLATFORMS
+	* ./configure.ac
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/buildertest.cpp
+	* ./rcssbase/conf/genericbuilder.cpp
+	* ./rcssbase/conf/genericbuilder.hpp
+	* ./rcssbase/conf/parse.ypp
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/parsertest.cpp
+	Removed exceptions because of issues on solaris
+
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	* ./rcssbase/lib/loadertest/Makefile.am
+	* ./rcssbase/lib/loadertest/derived1.cpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	Tried to fix some OS X problems but ended up commenting out the code
+
+2004-06-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./PLATFORMS
+	* ./rcssbase/lib/factory.hpp
+	* ./rcssbase/lib/loadertest/Makefile.am
+	* ./rcssbase/net/addr.cpp
+	Fixed OS X issues
+
+2004-06-10	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./ChangeLog
+	Fixed typos
+
+2004-06-10	Tom Howard	<tomhoward@users..sf.net>
+
+	* ./NEWS
+	Updated
+
+2004-06-10	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	* ./rcssbase/version.cpp
+	* ./rcssbase/vertest.cpp
+	Updated version test
+
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/parser.cpp
+	Added then removed debugging statements
+
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	Fixed bug where an execption would be thrown if getPath was called
+	and it had not been set.
+
+	* ./rcssbase/gzip/Makefile.am
+	* ./rcssbase/gzip/gzfstream.cpp
+	* ./rcssbase/gzip/gzfstream.hpp
+	* ./rcssbase/gzip/gzstream.cpp
+	* ./rcssbase/gzip/gzstream.hpp
+	* ./rcssbase/gzip/ac_lib_rcssgz.m4
+	Fixed bugs that made the new gz lib unusable.
+
+2004-06-07	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/Makefile.am
+	Fixed some problems building conf parser
+
+2004-05-31	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/shared_ptr.hpp
+	Added constructor that takes just a point to the memory being shared.
+	This allows for easier mixing of objects created from within the
+	program, and those created in modules.
+	Fix bug with assignment operator.
+
+2004-04-30      Tom Howard      <tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/loader.cpp
+	Fixed bug in library depedancy tracking
+
+	* ./rcssbase/lib/shared_ptr.hpp
+	Fixed bug in convertion to bool
+
+2004-04-23	thoward	<sserver-admin@lists.sf.net>
+
+	* ./rcssbase/conf/Makefile.am
+	Fixed small bug when conf parser is disabled
+2004-04-23	thoward	<sserver-admin@lists.sf.net>
+
+	* ./configure.ac
+	* ./rcssbase/conf/Makefile.am
+	building rcssconf is now optional
+
+2004-04-23	thoward	<sserver-admin@lists.sf.net>
+
+	* ./rcssbase/conf/parser.hpp
+	removed using namespace line
+
+2004-04-23	thoward	<sserver-admin@lists.sf.net>
+	* ./rcssbase/mutex.h
+	Fixed typo in header inclusion protection
+2004-04-23	thoward	<sserver-admin@lists.sf.net>
+
+	* ./rcssbase/gzip/Makefile.am
+	* ./rcssbase/gzip/gzstream.cpp
+	* ./rcssbase/gzip/gzstream.hpp
+	Fixed build problems
+	* ./rpm.am
+	Fixed error in RPMChangeLog creation
+	* ./rcssbase/conf/Makefile.am
+	Fixed error in flex generation rules
+
+2004-04-23	thoward	<sserver-admin@lists.sf.net>
+
+	* ./rpm.am
+	Fixed error in RPMChangeLog creation
+	* ./rcssbase/conf/Makefile.am
+	Fixed error in flex generation rules
+
+2003-12-29	Reza Zafarani	<rzafarani@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/gzip/Makefile.am
+	Added gzip Library
+
+2003-11-24	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/version.cpp
+	* ./rcssbase/gzip/Makefile.am
+	Added gzip directory
+
+
+2003-11-20	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./win32build.bat
+	* ./rcssbase/Makefile.am
+	Added batch file for building in win32
+
+
+2003-11-20	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/version.cpp.in
+	Used for generating version.cpp
+
+2003-11-20	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./PLATFORMS
+	Updated
+
+2003-11-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Setup/Setup.vdproj
+	* ./rcssbase/lib/lib.vcproj
+	* ./rcssbase/net/handler.cpp
+	* ./rcssbase/net/net.vcproj
+	* ./rcssbase/net/socket.cpp
+	* ./rcssbase/net/tcpsocket.cpp
+	Fixed some Win problems
+
+
+2003-11-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./PLATFORMS
+	Added note that it may be inaccurate
+
+
+2003-11-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/mutex.h
+	* ./rcssbase/net.hpp
+	* ./rcssbase/conf/Makefile.am
+	* ./rcssbase/lib/Makefile.am
+	* ./rcssbase/lib/factory.hpp
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.cpp
+	* ./rcssbase/lib/loaderimpl.hpp
+	* ./rcssbase/lib/preloadloader.cpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/factorytest/Makefile.am
+	* ./rcssbase/lib/factorytest/factorytest.cpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/handler.cpp
+	* ./rcssbase/net/handler.hpp
+	* ./rcssbase/net/socket.cpp
+	* ./rcssbase/net/socket.hpp
+	* ./rcssbase/net/socketstreambuf.hpp
+	* ./rcssbase/net/tcpsocket.cpp
+	* ./rcssbase/net/tcpsocket.hpp
+	* ./rcssbase/net/udpsocket.cpp
+	* ./rcssbase/net/udpsocket.hpp
+	* ./rcssbase/net/tcpsockettest/Makefile.am
+	* ./rcssbase/net/tcpsockettest/tcpsockettest.cpp
+	* ./rcssbase/net/udpsockettest/Makefile.am
+	* ./rcssbase/net/udpsockettest/udpsockettest.cpp
+	As you can tell many changes :). Exceptions have been removed from
+	the libraries and I've added tcpsocket to the net library.  Still
+	need to perform cross plaform tests.
+
+2003-10-31	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/version.cpp
+	* ./rcssbase/error/error.cpp
+	* ./rcssbase/lib/libimporter.cpp
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	* ./rcssbase/net/exception.cpp
+	* ./rcssbase/net/socket.cpp
+	Fixed some FreeBSD problems and remove soem CYGWIN defs
+
+
+2003-10-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./PLATFORMS
+	* ./rcssbase/lib/libimporter.cpp
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.cpp
+	* ./rcssbase/lib/loaderimpl.hpp
+	* ./rcssbase/lib/preloader.cpp
+	* ./rcssbase/lib/preloader.hpp
+	* ./rcssbase/lib/loadertest/base.cpp
+	* ./rcssbase/lib/loadertest/base.hpp
+	* ./rcssbase/lib/loadertest/derived1.cpp
+	Updated platform notes and fixed any platform specific problem
+	where I could
+
+
+2003-10-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./PLATFORMS
+	* ./Makefile.am
+	Added to describe the platforms rcssbase has been tested on
+
+2003-10-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/net/addrtest/addrtest.cpp
+	Fixed compilation problems on FreeBSD 4.9
+
+
+2003-10-10	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Added mistakenly removed boost headers to dist and instalation
+
+
+2003-09-22	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.ac
+	Moved configure.in to configure.ac
+
+	* ./rcssbase.vcproj
+	* ./rcssbase/lib/libimporter.vcproj
+	Added missing files
+
+
+2003-09-22	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Updated version number
+
+
+2003-09-22	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/loadertest/Makefile.am
+	Added libimports.cpp to clean files
+
+
+2003-09-22	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/loadertest/Makefile.am
+	Added base.hpp to librcssbase_SOURCES
+
+
+2003-09-22	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./cvs.am
+	Automated some of the commit rules in release and branch
+
+
+2003-09-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/Makefile.am
+	Fixed bug in re new autoconf macro
+
+
+2003-09-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/Makefile.am
+	* ./rcssbase/Makefile.am
+	Updated to include autoconf macros in dist
+
+
+2003-09-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase.ncb
+	* ./rcssbase.suo
+	* ./rcssbase/ac_lib_rcssbase.m4
+	* ./rcssbase/lib/ac_lib_rcsslib.m4
+	Added autoconf macros
+
+2003-09-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/shared_ptr.hpp
+	* ./rcssbase/lib/weak_ptr.hpp
+	* ./rcssbase/lib/loadertest/base.hpp
+	Renamed lib_shared_ptr and lib_weak_ptr to shared_ptr and weak_ptr
+
+
+2003-09-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Setup/Setup.vdproj
+	* ./rcssbase/lib/lib.vcproj
+	* ./rcssbase/lib/loadertest/derived3.vcproj
+	* ./rcssbase/lib/loadertest/loadertest.vcproj
+	Updated VC++ projects according to recent changes
+
+
+2003-09-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/lib/Makefile.am
+	* ./rcssbase/lib/libimporter.cpp
+	* ./rcssbase/lib/loaderimpl.cpp
+	* ./rcssbase/lib/preloader.cpp
+	* ./rcssbase/lib/preloader.hpp
+	* ./rcssbase/lib/preloadloader.cpp
+	* ./rcssbase/lib/preloadloader.hpp
+	* ./rcssbase/lib/factory.hpp
+	* ./rcssbase/lib/exception.hpp
+	* ./rcssbase/lib/exception.cpp
+	* ./rcssbase/lib/loadertest/Makefile.am
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	* ./rcssbase/lib/loadertest/derived3.cpp
+	renamed static loaders and static importers to preloaders.
+
+	Prevented instalaltion of test libs.
+
+	Removed Lib prefix on exceptions (they are already in the lib
+	namespace).
+
+	Added a typedef to Factory for the ClassNotFound exception.
+
+2003-09-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase.ncb
+	* ./rcssbase.suo
+	* ./rcssbase/lib/factorytest/factorytest.cpp
+	* ./rcssbase/lib/loadertest/base.hpp
+	* ./rcssbase/lib/loadertest/derived1.cpp
+	* ./rcssbase/lib/loadertest/derived2.cpp
+	rcss::lib::Factory now permits overwrites
+
+
+2003-09-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase.ncb
+	* ./rcssbase/conf/parse.ypp
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.cpp
+	* ./rcssbase/lib/staticimporter.cpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/loadertest/base.cpp
+	* ./rcssbase/lib/loadertest/base.hpp
+	* ./rcssbase/lib/loadertest/derived1.cpp
+	* ./rcssbase/lib/loadertest/derived2.cpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	Fixed problems with name stripping and added tests to check that
+	name stripping works.
+
+	replaced LIBLOADER_EXPORT macro with RCSSLIB_INIT and RCSSLIB_FIN
+
+2003-09-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Setup/Setup.vdproj
+	* ./rcssbase/error/error.vcproj
+	* ./rcssbase/lib/lib.vcproj
+	* ./rcssbase/lib/factorytest/factorytest.vcproj
+	* ./rcssbase/lib/loadertest/base.vcproj
+	* ./rcssbase/lib/loadertest/derived1.vcproj
+	* ./rcssbase/lib/loadertest/derived2.vcproj
+	* ./rcssbase/lib/loadertest/loadertest.vcproj
+	* ./rcssbase/net/net.vcproj
+	* ./rcssbase/net/addrtest/addrtest.vcproj
+	* ./rcssbase/net/iosocketstreamtest/iosocketstreamtest.vcproj
+	* ./rcssbase/net/udpsockettest/udpsockettest.vcproj
+	Fiddled with debug configurations and disabled loadertest in debug
+	mode due to very strange errors
+2003-09-08	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase.ncb
+	* ./rcssbase.suo
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	* ./rcssbase/lib/loadertest/Makefile.am
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	Added support for setting the path to look to libraries
+
+
+2003-09-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase.ncb
+	* ./rcssbase.suo
+	Added .lib files to msi distribution
+
+	* ./rcssbase/version.cpp
+	* ./rcssbase/version.hpp
+	Added code to export rcss::base::version from windows dll
+
+2003-09-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Setup/Setup.vdproj
+	* ./rcssbase/lib/factory.hpp
+	* ./rcssbase/lib/lib.vcproj
+	* ./rcssbase/lib/factorytest/factorytest.cpp
+	* ./rcssbase/lib/factorytest/factorytest.vcproj
+	* ./rcssbase/lib/loadertest/base.cpp
+	* ./rcssbase/lib/loadertest/base.hpp
+	* ./rcssbase/lib/loadertest/base.vcproj
+	* ./rcssbase/lib/loadertest/derived1.cpp
+	* ./rcssbase/lib/loadertest/derived1.vcproj
+	* ./rcssbase/lib/loadertest/derived2.cpp
+	* ./rcssbase/lib/loadertest/derived2.vcproj
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	* ./rcssbase/lib/loadertest/loadertest.vcproj
+	* ./rcssbase/net/addrtest/addrtest.vcproj
+	Ported rcsslib to Windows :D
+2003-09-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Fixed problem where rcsslib would be linked (and fail) before
+	libltdl was built.
+
+2003-09-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/lib/Makefile.am
+	* ./rcssbase/lib/exception.cpp
+	* ./rcssbase/lib/exception.hpp
+	* ./rcssbase/lib/factory.hpp
+	* ./rcssbase/lib/libimporter.cpp
+	* ./rcssbase/lib/loader.cpp
+	* ./rcssbase/lib/loader.hpp
+	* ./rcssbase/lib/loaderimpl.cpp
+	* ./rcssbase/lib/loaderimpl.hpp
+	* ./rcssbase/lib/shared_ptr.hpp
+	* ./rcssbase/lib/staticimporter.cpp
+	* ./rcssbase/lib/staticimporter.hpp
+	* ./rcssbase/lib/staticloader.cpp
+	* ./rcssbase/lib/staticloader.hpp
+	* ./rcssbase/lib/systemloader.cpp
+	* ./rcssbase/lib/systemloader.hpp
+	* ./rcssbase/lib/weak_ptr.hpp
+	* ./rcssbase/lib/factorytest/Makefile.am
+	* ./rcssbase/lib/factorytest/factorytest.cpp
+	* ./rcssbase/lib/loadertest/Makefile.am
+	* ./rcssbase/lib/loadertest/base.cpp
+	* ./rcssbase/lib/loadertest/base.hpp
+	* ./rcssbase/lib/loadertest/derived1.cpp
+	* ./rcssbase/lib/loadertest/derived2.cpp
+	* ./rcssbase/lib/loadertest/loadertest.cpp
+	Moved libary loading code into rcssbase/lib and renamed the
+	library rcsslib
+
+2003-09-01	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	* ./rcssbase/libloader/lib_shared_ptr.hpp
+	* ./rcssbase/libloader/libloader.cpp
+	* ./rcssbase/libloader/libloader.hpp
+	* ./rcssbase/libloader/llimporter.cpp
+	* ./rcssbase/libloader/libloadertest/Makefile.am
+	* ./rcssbase/libloader/libloadertest/derived1.cpp
+	* ./rcssbase/libloader/libloadertest/derived2.cpp
+	* ./rcssbase/libloader/libloadertest/libloadertest.cpp
+	Added static library loading tests.
+
+2003-08-29	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/libloader/factory.hpp
+	* ./rcssbase/libloader/libloader.cpp
+	* ./rcssbase/libloader/libloader.hpp
+	* ./rcssbase/libloader/factorytest/factorytest.cpp
+	* ./rcssbase/libloader/libloadertest/base.cpp
+	* ./rcssbase/libloader/libloadertest/base.hpp
+	* ./rcssbase/libloader/libloadertest/derived1.cpp
+	* ./rcssbase/libloader/libloadertest/libloadertest.cpp
+	ObjFact has been replaced by Factory and is no longer a singleton
+	wrapper. The correct usage of a factory is to have a static method
+	in the base class which returns the factory used by that base
+	class.  By placing the base class in a shared library, modules can
+	then access the factory, without needing to export symbols from
+	the main executable.  This is required because Windows does not
+	support exporting symbols from the executable to the shared library.
+
+
+2003-08-29	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase.ncb
+	* ./rcssbase.sln
+	* ./rcssbase.suo
+	* ./Setup/Setup.vdproj
+	* ./rcssbase/version.cpp
+	* ./rcssbase/libloader/Makefile.am
+	* ./rcssbase/libloader/factory.hpp
+	* ./rcssbase/libloader/lib_shared_ptr.hpp
+	* ./rcssbase/libloader/factorytest/Makefile.am
+	* ./rcssbase/libloader/factorytest/factorytest.cpp
+	* ./rcssbase/libloader/libloadertest/Makefile.am
+	* ./rcssbase/libloader/libloadertest/base.cpp
+	* ./rcssbase/libloader/libloadertest/base.hpp
+	* ./rcssbase/libloader/libloadertest/derived1.cpp
+	* ./rcssbase/libloader/libloadertest/libloadertest.cpp
+	* ./rcssbase/net/addrtest/Makefile.am
+	Created factory and libloader tests.  Modified factory accordingly.
+
+2003-08-29	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./dist.am
+	* ./msi.am
+	* ./rpm.am
+	* ./sf.am
+	Updated from rcsstest.  Better dist and uplaod rules
+
+2003-08-29	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./dist.am
+	* ./msi.am
+	* ./rpm.am
+	* ./sf.am
+	Updated from rcsstest.  Better dist and uplaod rules
+
+2003-08-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./cvs.am
+	* ./msi.am
+	* ./rpm.am
+	* ./sf.am
+	Moved custome targets into modules
+2003-08-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/libloader/Makefile.am
+	* ./rcssbase/libloader/factory.hpp
+	* ./rcssbase/libloader/lib_shared_ptr.hpp
+	* ./rcssbase/libloader/lib_weak_ptr.hpp
+	* ./rcssbase/libloader/libloader.cpp
+	* ./rcssbase/libloader/libloader.hpp
+	* ./rcssbase/libloader/llimporter.cpp
+	Moved libloader into rcssbase/libloader
+
+2003-08-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-10.0.0
+
+2003-08-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	Removed unneeded bizp2 and zip tests
+
+	Added upload targets, upload_src, upload_bin and upload, which
+	upload all the src dists, bin dists and all the dist respectively
+
+2003-08-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./COPYING.rtf
+	* ./configure.in
+	* ./rcssbase.ncb
+	* ./rcssbase.sln
+	* ./rcssbase.suo
+	* ./rel.awk
+	* ./Setup/Setup.vdproj
+	* ./boost/random/linear_congruential.hpp
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/error/Makefile.am
+	* ./rcssbase/error/ac_lib_rcsserror.m4
+	* ./rcssbase/error/error.cpp
+	* ./rcssbase/error/error.hpp
+	* ./rcssbase/error/error.vcproj
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/exception.cpp
+	* ./rcssbase/net/exception.hpp
+	* ./rcssbase/net/handler.cpp
+	* ./rcssbase/net/handler.hpp
+	* ./rcssbase/net/net.vcproj
+	* ./rcssbase/net/socket.cpp
+	* ./rcssbase/net/socket.hpp
+	* ./rcssbase/net/socketstreambuf.hpp
+	* ./rcssbase/net/udpsocket.cpp
+	* ./rcssbase/net/udpsocket.hpp
+	* ./rcssbase/net/addrtest/Makefile.am
+	* ./rcssbase/net/addrtest/addrtest.cpp
+	* ./rcssbase/net/addrtest/addrtest.vcproj
+	* ./rcssbase/net/iosocketstreamtest/Makefile.am
+	* ./rcssbase/net/iosocketstreamtest/iosocketstreamtest.cpp
+	* ./rcssbase/net/iosocketstreamtest/iosocketstreamtest.vcproj
+	* ./rcssbase/net/udpsockettest/Makefile.am
+	* ./rcssbase/net/udpsockettest/udpsockettest.cpp
+	* ./rcssbase/net/udpsockettest/udpsockettest.vcproj
+	Ported rcssbase/net to Windows
+
+	Added Addr constructors that take strings to specify the service
+	and protocol to determine the port
+
+	Added error library for returning the error message associated
+	with an error number.  This provides the same interface for
+	windows and linux
+
+	Update some configure.in parts and updated rel.awk accordingly
+
+	Added a zip dist target and upload rules
+
+	Added a msi target and upload rules.  You first must create the
+	msi file by building it with VC++7, otherwise an error will occur
+
+2003-08-12	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.4.5
+
+2003-08-10	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/exception.cpp
+	Fixed compilation problem on Cygwin
+
+
+2003-06-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.4.3
+
+2003-06-23	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/parser.h
+	stripQuotes now has an extra argument to specify what quote to
+	strip, which defaults to double quotes.
+
+	* ./rcssbase/conf/lexer.lpp
+	Added support for string in single quotes
+
+2003-06-20	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/genericbuilder.hpp
+	Added word wrapping of parameter descriptions
+
+2003-06-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.4.2
+
+2003-06-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./ChangeLog
+	* ./Makefile.am
+	* ./NEWS
+	* ./configure.in
+	* ./boost/mpl/bool.hpp
+	* ./boost/mpl/bool_fwd.hpp
+	* ./boost/mpl/aux_/lambda_support.hpp
+	* ./boost/mpl/aux_/template_arity_fwd.hpp
+	* ./boost/mpl/aux_/config/lambda.hpp
+	* ./boost/mpl/aux_/config/overload_resolution.hpp
+	* ./boost/mpl/aux_/config/preprocessor.hpp
+	* ./boost/mpl/aux_/config/static_constant.hpp
+	* ./boost/mpl/aux_/config/ttp.hpp
+	* ./boost/mpl/aux_/preprocessor/params.hpp
+	* ./boost/preprocessor/cat.hpp
+	* ./boost/preprocessor/config/config.hpp
+	* ./boost/random/additive_combine.hpp
+	* ./boost/random/bernoulli_distribution.hpp
+	* ./boost/random/cauchy_distribution.hpp
+	* ./boost/random/discard_block.hpp
+	* ./boost/random/exponential_distribution.hpp
+	* ./boost/random/geometric_distribution.hpp
+	* ./boost/random/inversive_congruential.hpp
+	* ./boost/random/lagged_fibonacci.hpp
+	* ./boost/random/linear_congruential.hpp
+	* ./boost/random/lognormal_distribution.hpp
+	* ./boost/random/mersenne_twister.hpp
+	* ./boost/random/normal_distribution.hpp
+	* ./boost/random/random_number_generator.hpp
+	* ./boost/random/ranlux.hpp
+	* ./boost/random/shuffle_output.hpp
+	* ./boost/random/subtract_with_carry.hpp
+	* ./boost/random/triangle_distribution.hpp
+	* ./boost/random/uniform_01.hpp
+	* ./boost/random/uniform_int.hpp
+	* ./boost/random/uniform_on_sphere.hpp
+	* ./boost/random/uniform_real.hpp
+	* ./boost/random/uniform_smallint.hpp
+	* ./boost/random/detail/const_mod.hpp
+	* ./boost/type_traits/is_float.hpp
+	* ./boost/type_traits/detail/bool_trait_def.hpp
+	* ./boost/type_traits/detail/bool_trait_undef.hpp
+	* ./boost/type_traits/detail/template_arity_spec.hpp
+	Added missing files
+
+2003-06-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/Makefile.am
+	Removed leftovers from debugging
+
+2003-06-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/Makefile.am
+	Fixed sed problems in solaris
+
+2003-06-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/Makefile.am
+	Removed linebreaks in sed command that was causing problems on
+	solaris
+
+2003-06-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/addrtest.cpp
+	* ./rcssbase/net/exception.cpp
+	Removed debugging outputs
+
+2003-06-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/buildertest.cpp
+	* ./rcssbase/conf/parsertest.cpp
+	Fixed some of the gcc2.95 building problems
+
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addrtest.cpp
+	Testing exceptions in shared libs
+
+2003-06-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.4.1
+
+2003-06-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/builder.hpp
+	Fixed gcc2.95 build problem
+
+2003-06-16	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/conf/ac_lib_rcssconfparser.m4
+	Fixed bug
+
+2003-06-16	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.4.0
+
+2003-06-16	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Fixed bug in RPMChangeLOg target
+
+2003-06-16	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./NEWS
+	* ./acinclude.m4
+	* ./configure.in
+	* ./missingflex
+	* ./spec.tmpl
+	* ./boost/assert.hpp
+	* ./boost/checked_delete.hpp
+	* ./boost/config.hpp
+	* ./boost/cstdint.hpp
+	* ./boost/current_function.hpp
+	* ./boost/integer_traits.hpp
+	* ./boost/intrusive_ptr.hpp
+	* ./boost/iterator.hpp
+	* ./boost/limits.hpp
+	* ./boost/operators.hpp
+	* ./boost/random.hpp
+	* ./boost/shared_ptr.hpp
+	* ./boost/static_assert.hpp
+	* ./boost/throw_exception.hpp
+	* ./boost/weak_ptr.hpp
+	* ./boost/config/compiler/gcc.hpp
+	* ./boost/config/compiler/hp_acc.hpp
+	* ./boost/config/compiler/intel.hpp
+	* ./boost/config/compiler/metrowerks.hpp
+	* ./boost/config/compiler/sunpro_cc.hpp
+	* ./boost/config/compiler/vacpp.hpp
+	* ./boost/config/compiler/visualc.hpp
+	* ./boost/config/platform/bsd.hpp
+	* ./boost/config/platform/cygwin.hpp
+	* ./boost/config/platform/hpux.hpp
+	* ./boost/config/platform/macos.hpp
+	* ./boost/config/platform/win32.hpp
+	* ./boost/config/stdlib/dinkumware.hpp
+	* ./boost/config/stdlib/roguewave.hpp
+	* ./boost/config/stdlib/stlport.hpp
+	* ./boost/detail/lightweight_mutex.hpp
+	* ./boost/detail/limits.hpp
+	* ./boost/detail/lwm_win32.hpp
+	* ./boost/detail/lwm_win32_cs.hpp
+	* ./boost/detail/shared_count.hpp
+	* ./boost/detail/workaround.hpp
+	* ./boost/random/additive_combine.hpp
+	* ./boost/random/bernoulli_distribution.hpp
+	* ./boost/random/binomial_distribution.hpp
+	* ./boost/random/gamma_distribution.hpp
+	* ./boost/random/geometric_distribution.hpp
+	* ./boost/random/inversive_congruential.hpp
+	* ./boost/random/lagged_fibonacci.hpp
+	* ./boost/random/linear_congruential.hpp
+	* ./boost/random/linear_feedback_shift.hpp
+	* ./boost/random/lognormal_distribution.hpp
+	* ./boost/random/mersenne_twister.hpp
+	* ./boost/random/normal_distribution.hpp
+	* ./boost/random/poisson_distribution.hpp
+	* ./boost/random/xor_combine.hpp
+	* ./boost/random/detail/const_mod.hpp
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/libloader.cpp
+	Updated from 9.3 branch
+
+	* ./rcssbase/parser.h
+	* ./rcssbase/conf/Makefile.am
+	* ./rcssbase/conf/ac_lib_rcssconfparser.m4
+	* ./rcssbase/conf/builder.cpp
+	* ./rcssbase/conf/builder.hpp
+	* ./rcssbase/conf/buildertest.cpp
+	* ./rcssbase/conf/genericbuilder.cpp
+	* ./rcssbase/conf/genericbuilder.hpp
+	* ./rcssbase/conf/lexer.lpp
+	* ./rcssbase/conf/lexer.hpp
+	* ./rcssbase/conf/parse.ypp
+	* ./rcssbase/conf/parser.cpp
+	* ./rcssbase/conf/parser.hpp
+	* ./rcssbase/conf/parsertest.cpp
+	* ./rcssbase/net/Makefile.am
+	Added config file parser library
+
+	2003-06-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.8
+
+2003-06-04	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./boost/type_traits/detail/bool_trait_undef.hpp
+	Added another file for gcc2.96
+
+2003-06-04	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./boost/mpl/bool.hpp
+	* ./boost/mpl/bool_fwd.hpp
+	* ./boost/mpl/aux_/lambda_support.hpp
+	* ./boost/mpl/aux_/template_arity_fwd.hpp
+	* ./boost/mpl/aux_/config/lambda.hpp
+	* ./boost/mpl/aux_/config/overload_resolution.hpp
+	* ./boost/mpl/aux_/config/preprocessor.hpp
+	* ./boost/mpl/aux_/config/static_constant.hpp
+	* ./boost/mpl/aux_/config/ttp.hpp
+	* ./boost/mpl/aux_/preprocessor/params.hpp
+	* ./boost/preprocessor/cat.hpp
+	* ./boost/preprocessor/config/config.hpp
+	* ./boost/type_traits/is_float.hpp
+	* ./boost/type_traits/detail/bool_trait_def.hpp
+	* ./boost/type_traits/detail/template_arity_spec.hpp
+	Added boost headers required when using gcc2.96
+
+2003-06-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Fixed bug in upload_rpm target
+
+2003-05-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Fixed bug in upload_bz2 target
+
+2003-05-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.7
+
+2003-05-29	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./spec.tmpl
+	Updated release procedure.  make release now just does a distcheck
+	and tags the release.  You then need to check out the release and
+	run make upload_gz, upload_bz2, upload_rpm and/or upload_sprm to
+	create the distributions and upload them to SF.  You then need to
+	go to the SF page and add them to the appropriate release.
+
+2003-05-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./acinclude.m4
+	updated check for rcsstest
+
+2003-05-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./boost/assert.hpp
+	* ./boost/checked_delete.hpp
+	* ./boost/config.hpp
+	* ./boost/cstdint.hpp
+	* ./boost/current_function.hpp
+	* ./boost/integer_traits.hpp
+	* ./boost/intrusive_ptr.hpp
+	* ./boost/iterator.hpp
+	* ./boost/limits.hpp
+	* ./boost/operators.hpp
+	* ./boost/random.hpp
+	* ./boost/shared_ptr.hpp
+	* ./boost/static_assert.hpp
+	* ./boost/throw_exception.hpp
+	* ./boost/weak_ptr.hpp
+	* ./boost/config/select_stdlib_config.hpp
+	* ./boost/config/suffix.hpp
+	* ./boost/config/compiler/common_edg.hpp
+	* ./boost/config/compiler/gcc.hpp
+	* ./boost/config/compiler/hp_acc.hpp
+	* ./boost/config/compiler/intel.hpp
+	* ./boost/config/compiler/metrowerks.hpp
+	* ./boost/config/compiler/sunpro_cc.hpp
+	* ./boost/config/compiler/vacpp.hpp
+	* ./boost/config/compiler/visualc.hpp
+	* ./boost/config/platform/bsd.hpp
+	* ./boost/config/platform/cygwin.hpp
+	* ./boost/config/platform/hpux.hpp
+	* ./boost/config/platform/macos.hpp
+	* ./boost/config/platform/win32.hpp
+	* ./boost/config/stdlib/dinkumware.hpp
+	* ./boost/config/stdlib/roguewave.hpp
+	* ./boost/config/stdlib/stlport.hpp
+	* ./boost/detail/lightweight_mutex.hpp
+	* ./boost/detail/limits.hpp
+	* ./boost/detail/lwm_win32.hpp
+	* ./boost/detail/lwm_win32_cs.hpp
+	* ./boost/detail/shared_count.hpp
+	* ./boost/detail/workaround.hpp
+	* ./boost/random/additive_combine.hpp
+	* ./boost/random/bernoulli_distribution.hpp
+	* ./boost/random/binomial_distribution.hpp
+	* ./boost/random/cauchy_distribution.hpp
+	* ./boost/random/discard_block.hpp
+	* ./boost/random/exponential_distribution.hpp
+	* ./boost/random/gamma_distribution.hpp
+	* ./boost/random/geometric_distribution.hpp
+	* ./boost/random/inversive_congruential.hpp
+	* ./boost/random/lagged_fibonacci.hpp
+	* ./boost/random/linear_congruential.hpp
+	* ./boost/random/linear_feedback_shift.hpp
+	* ./boost/random/poisson_distribution.hpp
+	* ./boost/random/random_number_generator.hpp
+	* ./boost/random/ranlux.hpp
+	* ./boost/random/shuffle_output.hpp
+	* ./boost/random/subtract_with_carry.hpp
+	* ./boost/random/triangle_distribution.hpp
+	* ./boost/random/uniform_01.hpp
+	* ./boost/random/uniform_int.hpp
+	* ./boost/random/uniform_on_sphere.hpp
+	* ./boost/random/uniform_real.hpp
+	* ./boost/random/uniform_smallint.hpp
+	* ./boost/random/xor_combine.hpp
+	* ./boost/random/detail/const_mod.hpp
+	Updated version of boost used to 1.30 are removed gcc3.3 warning
+
+2003-05-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.6
+
+2003-05-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/libloader.cpp
+	Added exception on null library names
+
+2003-06-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Fixed bug in upload_rpm target
+
+2003-05-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Fixed bug in upload_bz2 target
+
+2003-05-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.7
+
+2003-05-29	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./spec.tmpl
+	Updated release procedure.  make release now just does a distcheck
+	and tags the release.  You then need to check out the release and
+	run make upload_gz, upload_bz2, upload_rpm and/or upload_sprm to
+	create the distributions and upload them to SF.  You then need to
+	go to the SF page and add them to the appropriate release.
+
+2003-05-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./acinclude.m4
+	updated check for rcsstest
+
+2003-05-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./boost/assert.hpp
+	* ./boost/checked_delete.hpp
+	* ./boost/config.hpp
+	* ./boost/cstdint.hpp
+	* ./boost/current_function.hpp
+	* ./boost/integer_traits.hpp
+	* ./boost/intrusive_ptr.hpp
+	* ./boost/iterator.hpp
+	* ./boost/limits.hpp
+	* ./boost/operators.hpp
+	* ./boost/random.hpp
+	* ./boost/shared_ptr.hpp
+	* ./boost/static_assert.hpp
+	* ./boost/throw_exception.hpp
+	* ./boost/weak_ptr.hpp
+	* ./boost/config/select_stdlib_config.hpp
+	* ./boost/config/suffix.hpp
+	* ./boost/config/compiler/common_edg.hpp
+	* ./boost/config/compiler/gcc.hpp
+	* ./boost/config/compiler/hp_acc.hpp
+	* ./boost/config/compiler/intel.hpp
+	* ./boost/config/compiler/metrowerks.hpp
+	* ./boost/config/compiler/sunpro_cc.hpp
+	* ./boost/config/compiler/vacpp.hpp
+	* ./boost/config/compiler/visualc.hpp
+	* ./boost/config/platform/bsd.hpp
+	* ./boost/config/platform/cygwin.hpp
+	* ./boost/config/platform/hpux.hpp
+	* ./boost/config/platform/macos.hpp
+	* ./boost/config/platform/win32.hpp
+	* ./boost/config/stdlib/dinkumware.hpp
+	* ./boost/config/stdlib/roguewave.hpp
+	* ./boost/config/stdlib/stlport.hpp
+	* ./boost/detail/lightweight_mutex.hpp
+	* ./boost/detail/limits.hpp
+	* ./boost/detail/lwm_win32.hpp
+	* ./boost/detail/lwm_win32_cs.hpp
+	* ./boost/detail/shared_count.hpp
+	* ./boost/detail/workaround.hpp
+	* ./boost/random/additive_combine.hpp
+	* ./boost/random/bernoulli_distribution.hpp
+	* ./boost/random/binomial_distribution.hpp
+	* ./boost/random/cauchy_distribution.hpp
+	* ./boost/random/discard_block.hpp
+	* ./boost/random/exponential_distribution.hpp
+	* ./boost/random/gamma_distribution.hpp
+	* ./boost/random/geometric_distribution.hpp
+	* ./boost/random/inversive_congruential.hpp
+	* ./boost/random/lagged_fibonacci.hpp
+	* ./boost/random/linear_congruential.hpp
+	* ./boost/random/linear_feedback_shift.hpp
+	* ./boost/random/poisson_distribution.hpp
+	* ./boost/random/random_number_generator.hpp
+	* ./boost/random/ranlux.hpp
+	* ./boost/random/shuffle_output.hpp
+	* ./boost/random/subtract_with_carry.hpp
+	* ./boost/random/triangle_distribution.hpp
+	* ./boost/random/uniform_01.hpp
+	* ./boost/random/uniform_int.hpp
+	* ./boost/random/uniform_on_sphere.hpp
+	* ./boost/random/uniform_real.hpp
+	* ./boost/random/uniform_smallint.hpp
+	* ./boost/random/xor_combine.hpp
+	* ./boost/random/detail/const_mod.hpp
+	Updated version of boost used to 1.30 are removed gcc3.3 warning
+
+2003-05-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.6
+
+2003-05-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/libloader.cpp
+	Added exception on null library names
+
+2003-04-29	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.5
+
+2003-04-23	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/version.cpp
+	* ./rcssbase/version.hpp
+	* ./rcssbase/vertest.cpp
+	Added a version reporting function
+
+2003-04-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/socket.cpp
+	Fixed bugs in error reporting
+
+2003-03-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.4
+
+2003-03-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/socket.cpp
+	Fixed error in new setBroadcast function
+
+2003-03-26	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addr.hpp
+	Added values for broadcast and any address
+
+	* ./rcssbase/net/iosocketstreamtest.cpp
+	fixed compilation problem in gcc3
+
+	* ./rcssbase/net/socket.cpp
+	* ./rcssbase/net/socket.hpp
+	* ./rcssbase/net/udpsocket.cpp
+	* ./rcssbase/net/udpsockettest.cpp
+	Added options to set the broadcast enabled flag and tests to make
+	sure it works
+
+2003-03-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.3
+
+2003-03-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Added quick releases
+
+2003-03-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./NEWS
+	Added more into about the unit tests
+
+2003-03-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./COPYING
+	Updated for unit tests
+
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/addrtest.cpp
+	* ./rcssbase/net/iosocketstreamtest.cpp
+	* ./rcssbase/net/udpsockettest.cpp
+	More tests
+
+2003-03-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/addrtest.cpp
+	Added missing test file
+
+2003-03-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/Makefile.am
+	Added adrtest back to the tests
+
+	* ./rcssbase/net/udpsockettest.cpp
+	Cleaned up
+
+2003-03-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/rcssaddrtest.cpp
+	Bug fixes and extra tests
+
+	* ./acinclude.m4
+	* ./configure.in
+	* ./rcssbase/net/rcssaddrtest.cpp
+	* ./rcssbase/net/udpsockettest.cpp
+	Converted to use rcsstest library
+
+	* ./rcssbase/net/exception.cpp
+	* ./rcssbase/net/exception.hpp
+	* ./rcssbase/net/socket.cpp
+	* ./rcssbase/net/socket.hpp
+	* ./rcssbase/net/udpsockettest.cpp
+	Added more tests and added getPeer intead of getDest.
+
+2003-03-13	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./acinclude.m4
+	* ./configure.in
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/rcssaddrtest.cpp
+	Added a tester for addr.  The testing is very basic at the moment
+	and only works with a modified version of TestHarness.
+
+2003-02-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./rcssbase/net/socket.cpp
+	socklen_t is now a typedef of an int if the type does not exist
+
+2003-02-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.2
+
+2003-02-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Fixed bug in SED fix
+
+2003-02-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	SED is now automatically set withing the libtool script
+
+2003-02-17	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	* ./rcssbase/net/exception.cpp
+	added link to resolv lib for hstrerror
+
+2003-02-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./acinclude.m4
+	* ./configure.in
+	* ./rcssbase/gzfstream.h
+	Now compiles with either sstream or strstream
+
+2003-02-06	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/socketstreambuf.hpp
+	Removed couts
+
+2003-02-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.1
+
+2003-02-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/net/Makefile.am
+	Fixed bug in rpm build
+
+2003-02-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.3.0
+
+2003-01-28	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.2.3
+
+2003-01-22	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./ChangeLog
+	* ./Makefile.am
+	* ./NEWS
+	* ./configure.in
+	* ./spec.tmpl
+	* ./rcssbase/Makefile.am
+	Merged from 9_2 branch
+
+2003-01-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.2.2
+
+2003-01-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./spec.tmpl
+	* ./rcssbase/Makefile.am
+	Added rpm building support
+
+2003-01-10	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./ChangeLog
+	* ./NEWS
+	* ./configure.in
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/ac_lib_rcssnet.m4
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/exception.cpp
+	* ./rcssbase/net/exception.hpp
+	* ./rcssbase/net/iosocketstream.hpp
+	* ./rcssbase/net/isocketstream.hpp
+	* ./rcssbase/net/osocketstream.hpp
+	* ./rcssbase/net/socket.cpp
+	* ./rcssbase/net/socket.hpp
+	* ./rcssbase/net/socketstreambuf.hpp
+	* ./rcssbase/net/udpsocket.cpp
+	* ./rcssbase/net/udpsocket.hpp
+	Merged udplib branch
+
+2003-01-08	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/exception.cpp
+	* ./rcssbase/net/exception.hpp
+	* ./rcssbase/net/socket.cpp
+	Fixed gcc3 problems
+
+2003-01-08	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/ac_lib_rcssnet.m4
+	Added autoconf macro for easy detection
+
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addr.hpp
+	Addr now outputs dot notation for the host address
+
+2003-01-08	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/ac_lib_rcssnet.m4
+	Added autoconf macro for rcssnet detection
+
+2003-01-08	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/udpsocket.h
+	* ./rcssbase/net/Makefile.am
+	* ./rcssbase/net/addr.cpp
+	* ./rcssbase/net/addr.hpp
+	* ./rcssbase/net/exception.cpp
+	* ./rcssbase/net/exception.hpp
+	* ./rcssbase/net/iosocketstream.hpp
+	* ./rcssbase/net/isocketstream.hpp
+	* ./rcssbase/net/osocketstream.hpp
+	* ./rcssbase/net/socket.cpp
+	* ./rcssbase/net/socket.hpp
+	* ./rcssbase/net/socketstreambuf.hpp
+	* ./rcssbase/net/udpsocket.cpp
+	* ./rcssbase/net/udpsocket.hpp
+	Move udpsocket.h into net and created a library from it.
+
+2003-01-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.2.1
+
+2003-01-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.2.0
+
+2003-01-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/gzstream.h
+	Fixed compilation problems with gcc2.95.6
+
+2003-01-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./ChangeLog
+	* ./Makefile.am
+	* ./NEWS
+	* ./configure.in
+	Merged 9_1 branch
+
+2002-12-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.1.5
+
+2002-12-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Added config error if SED is not set
+
+2002-12-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./ChangeLog
+	* ./Makefile.am
+	* ./configure.in
+	Merged 9_1 branch
+
+2002-12-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Fixed bugs in branching targets
+
+2002-12-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./ChangeLog
+	* ./Makefile.am
+	* ./NEWS
+	* ./configure.in
+	* ./rel.awk
+	Merged 9_1 branch
+
+2002-12-10	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Added branching targets
+
+2002-12-04	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Configuration now fails if SED is not set
+
+2002-12-04	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./ChangeLog
+	* ./NEWS
+	* ./configure.in
+	Merged 9.1.4 branch
+
+2002-12-03	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.1.4
+
+2002-12-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Fixed libtool problems with SED
+
+2002-11-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./.cvsignore
+	* ./Makefile.am
+	Fixed bug in addlog
+
+2002-11-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/gzfstream.h
+	* ./rcssbase/gzstream.h
+	* ./rcssbase/sharedvar.h
+	* ./rcssbase/udpsocket.h
+	Merged sstream branch
+
+ 	* ./configure.in
+	Released rcssbase-9.1.2
+
+	* ./rcssbase/gzfstream.h
+	* ./rcssbase/gzstream.h
+	* ./rcssbase/sharedvar.h
+	* ./rcssbase/udpsocket.h
+	Removed some gcc3.2 compatibility warnings
+
+2002-11-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	addlog no longer creates empty logs
+
+	* ./ChangeLog
+	Moved changes from rcsoccersim/ChangeLog.base
+
+2002-11-15	Michael Gollin	<michaelgollin@users.sourceforge.net>
+
+	* ./rcssbase/gzfstream.h
+	* ./rcssbase/udpsocket.h
+	removed warnings concerning deprecated header files (gcc 3.2)
+
+2002-11-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.1.1
+
+2002-11-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Changed do_tag target to create a branch
+
+2002-11-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/udpsocket.h
+	Fixed problem with #include if inttypes.h
+
+2002-11-13	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./boost/cstdint.hpp
+	* ./boost/integer_traits.hpp
+	* ./boost/iterator.hpp
+	* ./boost/limits.hpp
+	* ./boost/operators.hpp
+	* ./boost/random.hpp
+	* ./boost/static_assert.hpp
+	* ./boost/detail/limits.hpp
+	* ./boost/random/additive_combine.hpp
+	* ./boost/random/bernoulli_distribution.hpp
+	* ./boost/random/cauchy_distribution.hpp
+	* ./boost/random/discard_block.hpp
+	* ./boost/random/exponential_distribution.hpp
+	* ./boost/random/geometric_distribution.hpp
+	* ./boost/random/inversive_congruential.hpp
+	* ./boost/random/lagged_fibonacci.hpp
+	* ./boost/random/linear_congruential.hpp
+	* ./boost/random/lognormal_distribution.hpp
+	* ./boost/random/mersenne_twister.hpp
+	* ./boost/random/normal_distribution.hpp
+	* ./boost/random/random_number_generator.hpp
+	* ./boost/random/ranlux.hpp
+	* ./boost/random/shuffle_output.hpp
+	* ./boost/random/subtract_with_carry.hpp
+	* ./boost/random/triangle_distribution.hpp
+	* ./boost/random/uniform_01.hpp
+	* ./boost/random/uniform_int.hpp
+	* ./boost/random/uniform_on_sphere.hpp
+	* ./boost/random/uniform_real.hpp
+	* ./boost/random/uniform_smallint.hpp
+	* ./boost/random/detail/const_mod.hpp
+	* ./boost/random/detail/iterator_mixin.hpp
+	* ./boost/random/detail/signed_unsigned_compare.hpp
+	Added boost random
+
+2002-11-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.1.0
+
+2002-11-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	Tweaked Makefile.am
+
+2002-11-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./boost/detail/winapi.hpp
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/creator.h
+	* ./rcssbase/factory.h
+	* ./rcssbase/lib_shared_ptr.h
+	* ./rcssbase/lib_weak_ptr.h
+	* ./rcssbase/libloader.cpp
+	* ./rcssbase/libloader.h
+	* ./rcssbase/llimporter.cpp
+	Tweaked LibLoader and OnjFact
+
+2002-10-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./rcssbase/Makefile.am
+	Fixed problems with Makefile.ams
+
+2002-10-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Added missing boost files to Makfile.am
+
+2002-10-30	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./boost/assert.hpp
+	* ./boost/checked_delete.hpp
+	* ./boost/config.hpp
+	* ./boost/current_function.hpp
+	* ./boost/intrusive_ptr.hpp
+	* ./boost/shared_ptr.hpp
+	* ./boost/throw_exception.hpp
+	* ./boost/weak_ptr.hpp
+	* ./boost/config/posix_features.hpp
+	* ./boost/config/select_compiler_config.hpp
+	* ./boost/config/select_platform_config.hpp
+	* ./boost/config/select_stdlib_config.hpp
+	* ./boost/config/suffix.hpp
+	* ./boost/config/user.hpp
+	* ./boost/config/compiler/borland.hpp
+	* ./boost/config/compiler/comeau.hpp
+	* ./boost/config/compiler/common_edg.hpp
+	* ./boost/config/compiler/compaq_cxx.hpp
+	* ./boost/config/compiler/gcc.hpp
+	* ./boost/config/compiler/greenhills.hpp
+	* ./boost/config/compiler/hp_acc.hpp
+	* ./boost/config/compiler/intel.hpp
+	* ./boost/config/compiler/kai.hpp
+	* ./boost/config/compiler/metrowerks.hpp
+	* ./boost/config/compiler/mpw.hpp
+	* ./boost/config/compiler/sgi_mipspro.hpp
+	* ./boost/config/compiler/sunpro_cc.hpp
+	* ./boost/config/compiler/vacpp.hpp
+	* ./boost/config/compiler/visualc.hpp
+	* ./boost/config/platform/aix.hpp
+	* ./boost/config/platform/amigaos.hpp
+	* ./boost/config/platform/beos.hpp
+	* ./boost/config/platform/bsd.hpp
+	* ./boost/config/platform/cygwin.hpp
+	* ./boost/config/platform/hpux.hpp
+	* ./boost/config/platform/irix.hpp
+	* ./boost/config/platform/linux.hpp
+	* ./boost/config/platform/macos.hpp
+	* ./boost/config/platform/solaris.hpp
+	* ./boost/config/platform/win32.hpp
+	* ./boost/config/stdlib/dinkumware.hpp
+	* ./boost/config/stdlib/libcomo.hpp
+	* ./boost/config/stdlib/libstdcpp3.hpp
+	* ./boost/config/stdlib/modena.hpp
+	* ./boost/config/stdlib/msl.hpp
+	* ./boost/config/stdlib/roguewave.hpp
+	* ./boost/config/stdlib/sgi.hpp
+	* ./boost/config/stdlib/stlport.hpp
+	* ./boost/config/stdlib/vacpp.hpp
+	* ./boost/detail/lightweight_mutex.hpp
+	* ./boost/detail/lwm_gcc.hpp
+	* ./boost/detail/lwm_irix.hpp
+	* ./boost/detail/lwm_linux.hpp
+	* ./boost/detail/lwm_nop.hpp
+	* ./boost/detail/lwm_pthreads.hpp
+	* ./boost/detail/lwm_win32.hpp
+	* ./boost/detail/lwm_win32_cs.hpp
+	* ./boost/detail/shared_count.hpp
+	* ./boost/detail/shared_ptr_nmt.hpp
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/creator.h
+	* ./rcssbase/depobj.h
+	* ./rcssbase/factory.h
+	* ./rcssbase/libloader.cc
+	* ./rcssbase/libloader.h
+	Mad the library loader more robust by allowing items created from
+	a library to be dependant on the lib, thus keeping it open for the
+	life time of that library.
+
+2002-10-25	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./.cvsignore
+	* ./rcssbase/.cvsignore
+	Added a few more files to cvs ignore
+
+2002-10-25	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./bootstrap
+	Fixed another bug in boostrap
+
+2002-10-25	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./.cvsignore
+	* ./rcssbase/.cvsignore
+	Added .cvsignore files
+
+2002-10-25	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./acinclude.m4
+	* ./bootstrap
+	Added acinclude.m4 and removed -I LIBTOOL_ACLOCARDIR from boostrap
+
+2002-10-25	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./bootstrap
+	Fixed bug in bootstrap
+
+2002-10-24	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/factory.h
+	Fixed ISO C++ deviations
+
+2002-10-23	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./bootstrap
+	Added autoupdate to libltdl
+
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/factory.h
+	* ./rcssbase/libloader.cc
+	* ./rcssbase/libloader.h
+	Implemented invisiable dlpreopening and workaround for
+	dlpreopening problems with gcc2.95.6 on SuSe 7.3
+
+2002-10-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./bootstrap
+	* ./configure.in
+	* ./rcssbase/Makefile.am
+	* ./rcssbase/factory.h
+	* ./rcssbase/libloader.cc
+	* ./rcssbase/libloader.h
+	Some tweeking to get everthing nice and portable
+
+2002-10-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/libloader.cc
+	* ./rcssbase/libloader.h
+	Fixed gcc3 compilation problems
+
+2002-10-18	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/factory.h
+	* ./rcssbase/libloader.cc
+	* ./rcssbase/libloader.h
+	Added LibLoader and Factory
+
+2002-08-21	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/FlexLexer.h
+	GCC3 fixes
+
+2002-08-20	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/gzstream.h
+	* ./rcssbase/messagequeue.h
+	* ./rcssbase/mutex.h
+	* ./rcssbase/udpsocket.h
+	Removed "using namespace std;" and added std:: where needed
+
+2002-08-19	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/cond.h
+	Added missing returns to TimeOut class
+
+2002-08-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	Fixed compilation problem with rcsserver.  FlexLexer.h is now installed
+	into include/rcssbase
+
+2002-08-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/gzstream.h
+	* ./rcssbase/udpsocket.h
+	Fixed bugs in gzstream
+
+2002-08-01	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.0.4
+
+2002-08-01	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	Added missing headers
+
+2002-08-01	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/udpsocket.h
+	Added iostream compatible wrapper for UDPSocket
+
+	* ./rcssbase/thread.h
+	* ./rcssbase/mutex.h
+	* ./rcssbase/cond.h
+	* ./rcssbase/messagequeue.h
+	* ./rcssbase/sharedvar.h
+	New threading classes
+
+	* ./rcssbase/gzstream.h
+	New generic iostream that compresses or decomresses to and from
+	another stream
+
+	* ./rcssbase/gzfstream.h
+	Move from rcsserver
+
+2002-07-26	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.0.3
+
+2002-07-26	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.0.3
+
+2002-07-12	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.0.2
+
+2002-07-11	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/udpsocket.h
+	close-on-exec flag is now set automatically
+
+2002-07-02	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./configure.in
+	Released rcssbase-9.0.0
+
+2002-06-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/Makefile.am
+	Fixed errors introduced today
+
+2002-06-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/FlexLexer.h
+	Added FlexLexer class
+
+2002-06-27	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./rcssbase/parser.h
+	Added abstract parser class
+
+2002-06-05	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	Fixed problems with old awks.
+
+2002-04-16	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	* ./configure.in
+	* ./rel.awk
+	Moved release number into version number
+
+2002-04-09	Tom Howard	<tomhoward@users.sf.net>
+
+	* ./Makefile.am
+	Added 'make addlog'
+
+2002-03-27	Automatic	<sserver-admin@lists.sf.net>
+
+  	* ./ChangeLog
+	Released rcssbase-8.04-rel_2
+
+
+2002-03-01      Tom Howard      <tomhoward@users.sf.net>
+
+	* rcssbase/udpsocket.h
+	Removed exceptions from UDPSocket, due to their inefficiency.
+
+2002-02-23      Tom Howard      <tomhoward@users.sf.net>
+
+	* rcssbase/udpsocket.h
+	Added sendChecked and recvChecked functions that will try to resend
+	if the error was EINTR or EWOULDBLOCK and will try to re-receive if
+	the error was EINTR.
+
+2002-02-20      Tom Howard      <tomhoward@users.sf.net>
+
+	* rcssbase/udpsocket.h
+	Removed use of void*
+
+2002-02-04      Tom Howard      <tomhoward@users.sf.net>
+
+	* Renamed src to rcssbase for easy use of headers when not installed.
+
+2002-01-22	Tom Howard	<tomhoward@users.sf.net>
+
+	* src/udpsocket.h
+	Removed memory leak in SocketErr contructors
+
+2002-01-15	Tom Howard	<tomhoward@users.sf.net>
+
+	* src/udpsocket.h
+	Put UDPSocket and SocketErr classes into a rcss namespace.
+
+2002-01-14	Tom Howard	<tomhoward@users.sf.net>
+
+	* src/udpsocket.h
+	Fixed bug with #include of config.h

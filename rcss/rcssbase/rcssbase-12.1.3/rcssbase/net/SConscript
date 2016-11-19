@@ -1,0 +1,38 @@
+# -*-python-*-
+import os
+
+Import('env')
+
+if env['PLATFORM'] == 'win32':
+	NET_LIBS=['ws2_32', 'rcsserror']
+else:
+	NET_LIBS=['rcsserror']
+	
+env.Append( LIBPATH = '../error/' )
+rcssnet = env.SharedLibrary('rcssnet', ['addr.cpp',
+					'socket.cpp', 
+					'udpsocket.cpp', 
+					'tcpsocket.cpp', 
+					'handler.cpp'],
+			    LIBS=NET_LIBS )
+Default(rcssnet)
+
+install = Install( env[ 'libdir' ], rcssnet )
+Alias('install', install)
+
+install = Install( os.path.join( env[ 'pkgincludedir' ], 'net' ),
+		       ['addr.hpp',
+			'socket.hpp',
+			'udpsocket.hpp',
+			'tcpsocket.hpp',
+			'socketstreambuf.hpp',
+			'isocketstream.hpp',
+			'osocketstream.hpp',
+			'iosocketstream.hpp',
+			'handler.hpp'])
+Alias('install', install)
+
+SConscript(['addrtest/SConscript', 
+	    'udpsockettest/SConscript',
+	    'tcpsockettest/SConscript',
+	    'iosocketstreamtest/SConscript'])

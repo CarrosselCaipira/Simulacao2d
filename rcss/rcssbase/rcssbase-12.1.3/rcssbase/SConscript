@@ -1,0 +1,46 @@
+# -*-python-*-
+import os, SCons
+
+Import('env unit_env')
+
+rcssbase = env.SharedLibrary( 'rcssbase', ['version.cpp'] )
+Default(rcssbase)
+install = Install( env[ 'libdir' ], 
+			 		   rcssbase )
+Alias('install', install)
+
+
+install = Install( env[ 'pkgincludedir' ], 
+		   ['parser.h',
+		    'thread.h',
+		    'mutex.h',
+		    'cond.h',
+		    'messagequeue.h',
+		    'sharedvar.h',
+		    'FlexLexer.h',
+		    'version.hpp',
+		    'net.hpp',
+		    'rcssbaseconfig.hpp'])
+Alias('install', install)
+
+
+if env['HAVE_CPPUNIT']:
+	unit_env['test_main']=unit_env.Object('testmain.cpp')
+
+	unit_env.Append( LIBPATH = '.' )	
+	unit_test = unit_env.Program('vertest',	
+				     [unit_env['test_main'], 'vertest.cpp'],
+				     LIBS=['rcssbase', unit_env['CPPUNIT_LIB']])
+	path = SCons.Util.AppendPath( unit_env[ 'ENV' ][ 'PATH' ], 
+				      os.path.join( os.getcwd(), '.' ) )
+	result = unit_env.Command( 'vertest.xml', 
+				   str( unit_test[0] ), 
+				   ["$SOURCE $TARGET"],
+				   ENV = {'PATH' : path })
+	Alias( 'check', result )
+
+SConscript(['error/SConscript', 
+	    'net/SConscript',
+	    'gzip/SConscript',
+	    'lib/SConscript',
+	    'conf/SConscript'])
